@@ -1,6 +1,7 @@
 // Java program to implement Max Heap
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class MaxHeap {
     private int[] Heap;
@@ -109,7 +110,7 @@ public class MaxHeap {
     public static void main(String[] arg)
     {
         int[] randomgen;
-        System.out.println("Generating random size 15 max heap");
+        System.out.println("Generated random size 15 max heap");
         for (int i = 1; i <= 15; i++) {
           randomgen[i] = rand.nextInt(100);
         }
@@ -117,17 +118,30 @@ public class MaxHeap {
         for (int j = 1; j <= 15; j++) {
           maxheap.insert(randomgen[j]);
         }
-        //maxHeap.insert(5);
-        //maxHeap.insert(3);
-        //maxHeap.insert(17);
-        //maxHeap.insert(10);
-        //maxHeap.insert(84);
-        //maxHeap.insert(19);
-        //maxHeap.insert(6);
-        //maxHeap.insert(22);
-        //maxHeap.insert(9);
-
+        //can now use randomgen as our scrambled list 
+        //left arrow --> left child 
+        //right arrow --> right child 
+        //up arrow --> parent
+        int selectionvar = 0;
+        int alpha;
+        while(1) {
+          char input = System.console().readLine();
+          if() //input is up {
+            selectionvar = parent(selectionvar);
+          }
+          else if() { //input is right
+            selectionvar = rightChild(selectionvar)
+          }
+          else if () { //input is left
+            selectionvar = leftChild(selectionvar)
+          }
+          else if () { //selected
+            alpha = selectionvar;
+          }
+            
+        }
         maxHeap.print();
-        System.out.println("The max val is " + maxHeap.extractMax());
+
+        
     }
 }
