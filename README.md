@@ -5,3 +5,4 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 maxheap.java - hnggggggggggggggggg
 
 to do: add swap counters, add computation of ideal solution
+javascript structure
