@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 // Java program to implement Max Heap\
 
-public class MaxHeap {
+public class cleanworkfile {
     private int[] Heap;
     private int size;
     private int maxsize;
