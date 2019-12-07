@@ -14,3 +14,8 @@ https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/D
 references/functions to draw shit:
 https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D
 
+websafe fonts (just the syntax for using them):
+https://www.w3schools.com/cssref/css_websafe_fonts.asp
+
+
+
