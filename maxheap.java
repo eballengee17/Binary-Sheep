@@ -110,7 +110,18 @@ public class MaxHeap {
 
     public static void main(String[] arg)
     {
-        int treeSize = 7;
+        int difficulty;
+        int treeSize;
+
+        if (difficulty == 0){
+          treesize = 7;
+        }
+        else if(difficulty == 1){
+          treesize = 15;
+        }
+        else if(difficulty == 2){
+          treesize = 31;
+        }
         int maxR = 100;
         int minR= 1;
         int rangeR = maxR - minR + 1;
