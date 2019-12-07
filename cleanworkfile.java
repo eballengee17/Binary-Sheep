@@ -103,19 +103,53 @@ public class MaxHeap {
 
     public static void main(String[] arg)
     {
-        System.out.println("The Max Heap is ");
-        MaxHeap maxHeap = new MaxHeap(15);
-        maxHeap.insert(5);
-        maxHeap.insert(3);
-        maxHeap.insert(17);
-        maxHeap.insert(10);
-        maxHeap.insert(84);
-        maxHeap.insert(19);
-        maxHeap.insert(6);
-        maxHeap.insert(22);
-        maxHeap.insert(9);
+        int difficulty;
+        if (difficulty == 0){
+          int[] unsolved = new int[7];
+          //Generates 7 Random Numbers in the range 1 -20
+          for(int i = 0; i < unsolved.length; i++) {
+          unsolved[i] = (int)(Math.random()*100 + 1);
+          }
+          //preserve unsolved and work with unsolved
+          System.out.println("Generating solved maxheap ");
+          MaxHeap solved = new MaxHeap(7);
+          for(i = 0; i < unsolved.length; i++){
+            solved.insert(unsolved[i]);
+          }
 
-        maxHeap.print();
-        System.out.println("The max val is " + maxHeap.extractMax());
+          maxHeap.print();
+        }
+        else if (difficulty == 1){
+          int[] unsolved = new int[15];
+          //Generates 7 Random Numbers in the range 1 -20
+          for(int i = 0; i < unsolved.length; i++) {
+          unsolved[i] = (int)(Math.random()*100 + 1);
+          }
+          //preserve unsolved and work with unsolved
+          System.out.println("Generating solved maxheap ");
+          MaxHeap solved = new MaxHeap(15);
+          for(i = 0; i < unsolved.length; i++){
+            solved.insert(unsolved[i]);
+          }
+
+          maxHeap.print();
+
+        }
+        else if (difficulty == 2){
+          int[] unsolved = new int[31];
+          //Generates 7 Random Numbers in the range 1 -20
+          for(int i = 0; i < unsolved.length; i++) {
+          unsolved[i] = (int)(Math.random()*100 + 1);
+          }
+          //preserve unsolved and work with unsolved
+          System.out.println("Generating solved maxheap ");
+          MaxHeap solved = new MaxHeap(31);
+          for(i = 0; i < unsolved.length; i++){
+            solved.insert(unsolved[i]);
+          }
+
+          maxHeap.print();
+
+        }
     }
 }
