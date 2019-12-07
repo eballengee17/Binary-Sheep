@@ -10,6 +10,7 @@ public class cleanworkfile implements Serializable {
     private int size;
     private int maxsize;
     public int swapcount = 0;
+    public int userswapcount = 0;
 
     // Constructor to initialize an
     // empty max heap with given maximum
@@ -139,10 +140,8 @@ public class cleanworkfile implements Serializable {
 
           while(1){
             if (Arrays.equals(Heap, unsolved)){
-              break;
+                break;
             }
-            Gson gson = new Gson();
-            String userJson = gson.toJson(unsolved);
             //scanning for user method inputs
             //desperation section: we run the entire thing in a single java file because fuck javascript, fuck html, and fuck this, nobody knows this shit
             //the ghetto method
@@ -154,12 +153,15 @@ public class cleanworkfile implements Serializable {
             Int beta = beta_input.nextLine();
             if(beta == 0){
               Collections.swap(unsolved, alpha, parent(alpha));
+              userswapcount += 1;
             }
             else if(beta == 1){
               Collections.swap(unsolved, alpha, leftChild(alpha));
+              userswapcount += 1;
             }
             else if(beta == 2){
               Collections.swap(unsolved, alpha, rightChild(alpha));
+              userswapcount += 1;
             }
 
           }
