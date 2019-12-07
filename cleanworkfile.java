@@ -1,8 +1,9 @@
 import java.util.Scanner;
+import java.io.Serializable;
 
 // Java program to implement Max Heap\
 
-public class cleanworkfile {
+public class cleanworkfile implements Serializable {
     private int[] Heap;
     private int size;
     private int maxsize;
@@ -124,6 +125,21 @@ public class cleanworkfile {
           for(i = 0; i < unsolved.length; i++){
             solved.insert(unsolved[i]);
           }
+          try
+          {
+            //Saving of object in a file
+            ObjectOutputStream out = new ObjectOutputStream(file);
+
+            // Method for serialization of object
+            out.writeObject(unsolved);
+
+            out.flush();
+            out.close();
+
+            System.out.println("Object has been serialized");
+
+          }
+
           int[] alpha;
           for(i = 0; i < unsolved.length; i++){
             alpha.insert(solved[i]);
