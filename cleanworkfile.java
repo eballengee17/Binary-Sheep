@@ -113,6 +113,7 @@ public class cleanworkfile implements Serializable {
         System.out.println("Enter difficulty setting (0 for easy, 1 for med, 2 for hard)");
         Int difficulty = diff_input.nextLine();
         //take some user input for difficulty here
+
         if (difficulty == 0){
           int[] unsolved = new int[7];
           //Generates 7 Random Numbers in the range 1 -20
@@ -140,17 +141,15 @@ public class cleanworkfile implements Serializable {
 
           }
 
-          int[] alpha;
-          for(i = 0; i < unsolved.length; i++){
-            alpha.insert(solved[i]);
-          }
           while(1){
-            if (Arrays.equals(alpha, unsolved)){
+            if (Arrays.equals(Heap, unsolved)){
               break;
             }
+            //scanning for user method inputs
           }
           maxHeap.print();
         }
+
         else if (difficulty == 1){
           int[] unsolved = new int[15];
           //Generates 7 Random Numbers in the range 1 -20
@@ -164,9 +163,16 @@ public class cleanworkfile implements Serializable {
             solved.insert(unsolved[i]);
           }
 
+          while(1){
+            if (Arrays.equals(Heap, unsolved)){
+              break;
+            }
+            //scanning for user method inputs
+          }
           maxHeap.print();
 
         }
+
         else if (difficulty == 2){
           int[] unsolved = new int[31];
           //Generates 7 Random Numbers in the range 1 -20
@@ -180,6 +186,12 @@ public class cleanworkfile implements Serializable {
             solved.insert(unsolved[i]);
           }
 
+          while(1){
+            if (Arrays.equals(Heap, unsolved)){
+              break;
+            }
+            //scanning for user method inputs
+          }
           maxHeap.print();
 
         }
