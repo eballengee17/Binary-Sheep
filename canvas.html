@@ -8,9 +8,20 @@
         margin: 0;
         overflow: hidden;
       }
+      .field {
+        position: relative;
+        z-index: 1;
+      }
+      /* .sheepie {
+        z-index: 2;
+        position: relative;
+        left:
+      } */
     </style>
   </head>
-  <body>
+  <body style = "background-color:#003366">
+    <img src = "field.png" style = "max-width:75%" align = "right">
+    <!-- <img src = "sheepie.png" > -->
     <canvas class="myCanvas">
       <p>Add suitable fallback here.</p>
     </canvas>
@@ -18,67 +29,43 @@
     <img src="Images/field.png" alt="">
 
     <script>
+
       const canvas = document.querySelector('.myCanvas');
       const width = canvas.width = window.innerWidth;
       const height = canvas.height = window.innerHeight;
       const ctx = canvas.getContext('2d');
 
+      var image_source = "sheepie.png";
 
 
-      ctx.fillStyle = 'rgb(47,79,79)';
-      ctx.fillRect(0,0,width,height);
-
-      ctx.fillStyle = 'rgb(255,0,0)';
-      ctx.fillRect(50,50,100,150);
-
-      function degToRad(degrees) {
-       return degrees * Math.PI / 180;
-      };
-
-      ctx.beginPath();
-      ctx.fillStyle = 'rgb(0, 0, 255)';
-      ctx.arc(150, 106, 50, degToRad(0), degToRad(360), false);
-      ctx.fill();
+      function generateImage() {
+        var img = document.createElement('img')
+        img.src = imgSrc;
+        return img;
+      }
+      for (var i = 0; i < 20; i++ ) {
+        document.body.appendChild(generateImage());
+        }
+      // ctx.fillStyle = 'rgb(0,0,0)';
+      // ctx.fillRect(0,0,2000,2000 );
 
 
-      function draw_me_a_sheep_please(x, y){
-        // ctx.ellipse(x, y, radiusx, radiusy, rotation, startAng, endAng)
-        // ctx.arc(x, y, radius, startAng, endAng)
-        ctx.beginPath();
-        ctx.fillStyle = 'blue';
-        ctx.ellipse(x, y, 80, 50, degToRad(-7), degToRad(0), degToRad(360));
-        ctx.fill();
+      // function degToRad(degrees) {
+      //  return degrees * Math.PI / 180;
+      // };
 
-        ctx.beginPath();
-        ctx.fillStyle = 'green';
-        ctx.arc(x-40, y-45, 20, degToRad(0), degToRad(360));
-        ctx.fill();
+      // ctx.beginPath();
+      // ctx.fillStyle = 'rgb(0, 0, 255)';
+      // ctx.arc(150, 106, 50, degToRad(0), degToRad(360), false);
+      // ctx.fill();
 
-        ctx.beginPath();
-        ctx.fillStyle = 'green';
-        ctx.arc(x, y-50, 20, degToRad(0), degToRad(360));
-        ctx.fill();
-
-        ctx.beginPath();
-        ctx.fillStyle = 'green';
-        ctx.arc(x+ 40, y-47, 20, degToRad(0), degToRad(360));
-        ctx.fill();
-
-
-        ctx.beginPath();
-        ctx.fillStyle = 'green';
-        ctx.arc(x - 77, y - 30, 20, degToRad(0), degToRad(360));
-        ctx.fill();
-
-        ctx.beginPath();
-        ctx.fillStyle = 'green';
-        ctx.arc(x - 77, y , 20, degToRad(0), degToRad(360));
-        ctx.fill();
-
-      };
-
-      draw_me_a_sheep_please(300, 300);
-
+      // function draw_me_a_sheep_please(x, y){
+      //   // ctx.ellipse(x, y, radiusx, radiusy, rotation, startAng, endAng)
+      //   // ctx.arc(x, y, radius, startAng, endAng)
+      //   ctx.beginPath();
+      //
+      // };
+      //draw_me_a_sheep_please(300, 300);
     </script>
   </body>
 </html>

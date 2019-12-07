@@ -17,7 +17,8 @@ https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D
 websafe fonts (just the syntax for using them):
 https://www.w3schools.com/cssref/css_websafe_fonts.asp
 
-
+SWAPPING TWO ITEMS:
+https://stackoverflow.com/questions/22528519/swap-two-items-on-clicks
 
 
 serialization and deserialization
