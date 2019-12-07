@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sheep</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas class="myCanvas">
+      <p>Add suitable fallback here.</p>
+    </canvas>
+
+    <script>
+      const canvas = document.querySelector('.myCanvas');
+      const width = canvas.width = window.innerWidth;
+      const height = canvas.height = window.innerHeight;
+      const ctx = canvas.getContext('2d');
+
+      ctx.fillStyle = 'rgb(0,0,0)';
+      ctx.fillRect(0,0,width,height);
+
+      ctx.fillStyle = 'rgb(255,0,0)';
+      ctx.fillRect(50,50,100,150);
+
+      function degToRad(degrees) {
+       return degrees * Math.PI / 180;
+      };
+
+      ctx.beginPath();
+      ctx.fillStyle = 'rgb(0, 0, 255)';
+      ctx.arc(150, 106, 50, degToRad(0), degToRad(360), false);
+      ctx.fill();
+
+
+      function draw_me_a_sheep_please(x, y){
+        // ctx.ellipse(x, y, radiusx, radiusy, rotation, startAng, endAng)
+        // ctx.arc(x, y, radius, startAng, endAng)
+        ctx.beginPath();
+        ctx.fillStyle = 'blue';
+        ctx.ellipse(x, y, 80, 50, degToRad(-7), degToRad(0), degToRad(360));
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.fillStyle = 'green';
+        ctx.arc(x-40, y-45, 20, degToRad(0), degToRad(360));
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.fillStyle = 'green';
+        ctx.arc(x, y-50, 20, degToRad(0), degToRad(360));
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.fillStyle = 'green';
+        ctx.arc(x+ 40, y-47, 20, degToRad(0), degToRad(360));
+        ctx.fill();
+
+
+        ctx.beginPath();
+        ctx.fillStyle = 'green';
+        ctx.arc(x - 77, y - 30, 20, degToRad(0), degToRad(360));
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.fillStyle = 'green';
+        ctx.arc(x - 77, y , 20, degToRad(0), degToRad(360));
+        ctx.fill();
+
+      };
+
+      draw_me_a_sheep_please(300, 300);
+    </script>
+  </body>
+</html>
