@@ -12,21 +12,19 @@
         position: relative;
         z-index: 1;
       }
-      /* .sheepie {
+      .sheepie {
         z-index: 2;
         position: relative;
         left:
-      } */
+      }
     </style>
   </head>
   <body style = "background-color:#003366">
-    <img src = "field.png" style = "max-width:75%" align = "right">
-    <!-- <img src = "sheepie.png" > -->
+    <img src = "Images/field.png" style = "max-width:75%" align = "right">
+    <img src = "Images/sheepie.png" >
     <canvas class="myCanvas">
       <p>Add suitable fallback here.</p>
     </canvas>
-
-    <img src="Images/field.png" alt="">
 
     <script>
 
@@ -35,17 +33,7 @@
       const height = canvas.height = window.innerHeight;
       const ctx = canvas.getContext('2d');
 
-      var image_source = "sheepie.png";
-
-
-      function generateImage() {
-        var img = document.createElement('img')
-        img.src = imgSrc;
-        return img;
-      }
-      for (var i = 0; i < 20; i++ ) {
-        document.body.appendChild(generateImage());
-        }
+      
       // ctx.fillStyle = 'rgb(0,0,0)';
       // ctx.fillRect(0,0,2000,2000 );
 
