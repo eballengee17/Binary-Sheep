@@ -1,4 +1,7 @@
-// Java program to implement Max Heap
+import java.util.Scanner;
+
+// Java program to implement Max Heap\
+
 public class MaxHeap {
     private int[] Heap;
     private int size;
@@ -103,7 +106,10 @@ public class MaxHeap {
 
     public static void main(String[] arg)
     {
-        int difficulty;
+        Scanner diff_input = new Scanner(System.in);
+        System.out.println("Enter difficulty setting (0 for easy, 1 for med, 2 for hard)");
+        Int difficulty = diff_input.nextLine();
+        //take some user input for difficulty here
         if (difficulty == 0){
           int[] unsolved = new int[7];
           //Generates 7 Random Numbers in the range 1 -20
