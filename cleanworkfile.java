@@ -1,5 +1,7 @@
 import java.util.Scanner;
 import java.io.Serializable;
+import java.util.*;
+
 
 // Java program to implement Max Heap\
 
@@ -93,9 +95,16 @@ public class cleanworkfile implements Serializable {
 
     public void print()
     {
-        for (int i = 1; i <= size; i++) {
+        for (int i = 0; i < size; i++) {
             System.out.println(Heap[i]);
         }
+    }
+
+    public void arrayprint(int[] a)
+    {
+      for (int i = 0; i < a.length; i++) {
+        System.out.println(a[i]);
+      }
     }
 
     // Remove an element from max heap
@@ -144,14 +153,15 @@ public class cleanworkfile implements Serializable {
             System.out.println("Enter swap target (0 for parent, 1 for left child, 2 for right child)");
             Int beta = beta_input.nextLine();
             if(beta == 0){
-              swap(alpha, parent(alpha));
+              Collections.swap(unsolved, alpha, parent(alpha));
             }
             else if(beta == 1){
-              swap(alpha, leftChild(alpha));
+              Collections.swap(unsolved, alpha, leftChild(alpha));
             }
             else if(beta == 2){
-              swap(alpha, rightChild(alpha));
+              Collections.swap(unsolved, alpha, rightChild(alpha));
             }
+
           }
           maxHeap.print();
         }
