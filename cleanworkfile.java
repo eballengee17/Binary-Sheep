@@ -6,6 +6,7 @@ public class MaxHeap {
     private int[] Heap;
     private int size;
     private int maxsize;
+    public int swapcount = 0;
 
     // Constructor to initialize an
     // empty max heap with given maximum
@@ -50,6 +51,7 @@ public class MaxHeap {
         tmp = Heap[fpos];
         Heap[fpos] = Heap[spos];
         Heap[spos] = tmp;
+        swapcount += 1;
     }
 
     // A recursive function to max heapify the given
@@ -114,7 +116,7 @@ public class MaxHeap {
           int[] unsolved = new int[7];
           //Generates 7 Random Numbers in the range 1 -20
           for(int i = 0; i < unsolved.length; i++) {
-          unsolved[i] = (int)(Math.random()*100 + 1);
+            unsolved[i] = (int)(Math.random()*100 + 1);
           }
           //preserve unsolved and work with unsolved
           System.out.println("Generating solved maxheap ");
@@ -122,7 +124,15 @@ public class MaxHeap {
           for(i = 0; i < unsolved.length; i++){
             solved.insert(unsolved[i]);
           }
-
+          int[] alpha;
+          for(i = 0; i < unsolved.length; i++){
+            alpha.insert(solved[i]);
+          }
+          while(1){
+            if (Arrays.equals(alpha, unsolved)){
+              break;
+            }
+          }
           maxHeap.print();
         }
         else if (difficulty == 1){
