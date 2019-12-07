@@ -1,12 +1,16 @@
-// Java program to implement Max Heap
-import java.lang.Math;
-import java.util.Random;
 import java.util.Scanner;
+import java.io.Serializable;
+import java.util.*;
 
-public class MaxHeap {
+
+// Java program to implement Max Heap\
+
+public class MaxHeap implements Serializable {
     private int[] Heap;
     private int size;
     private int maxsize;
+    public int swapcount = 0;
+    public int userswapcount = 0;
 
     // Constructor to initialize an
     // empty max heap with given maximum
@@ -34,7 +38,7 @@ public class MaxHeap {
     private int rightChild(int pos)
     {
         return (2 * pos) + 1;
-    }
+
 
     // Returns true of given node is leaf
     private boolean isLeaf(int pos)
@@ -51,6 +55,7 @@ public class MaxHeap {
         tmp = Heap[fpos];
         Heap[fpos] = Heap[spos];
         Heap[spos] = tmp;
+        swapcount += 1;
     }
 
     // A recursive function to max heapify the given
@@ -91,13 +96,17 @@ public class MaxHeap {
 
     public void print()
     {
-        for (int i = 1; i <= size / 2; i++) {
-            System.out.print(" PARENT : " + Heap[i] + " LEFT CHILD : " +
-                      Heap[2 * i] + " RIGHT CHILD :" + Heap[2 * i + 1]);
-            System.out.println();
+        for (int i = 0; i < size; i++) {
+            System.out.println(Heap[i]);
         }
+    }
 
-        }
+    public void arrayprint(int[] a)
+    {
+      for (int i = 0; i < a.length; i++) {
+        System.out.println(a[i]);
+      }
+    }
 
     // Remove an element from max heap
     public int extractMax()
@@ -110,56 +119,99 @@ public class MaxHeap {
 
     public static void main(String[] arg)
     {
-        int difficulty;
-        int treeSize;
+        Scanner diff_input = new Scanner(System.in);
+        System.out.println("Enter difficulty setting (0 for easy, 1 for med, 2 for hard)");
+        Int difficulty = diff_input.nextLine();
+        //take some user input for difficulty here
 
         if (difficulty == 0){
-          treesize = 7;
-        }
-        else if(difficulty == 1){
-          treesize = 15;
-        }
-        else if(difficulty == 2){
-          treesize = 31;
-        }
-        int maxR = 100;
-        int minR= 1;
-        int rangeR = maxR - minR + 1;
-
-        int[] randomgen = new int[treeSize];
-        System.out.println("Generated random size 15 max heap");
-        for (int i = 0; i < treeSize; i++) {
-          randomgen[i] = (int)(Math.random() * rangeR) + minR;
-        }
-        MaxHeap maxHeap = new MaxHeap(treeSize);
-        for (int j = 0; j < treeSize ; j++) {
-          maxHeap.insert(randomgen[j]);
-        }
-        //can now use randomgen as our scrambled list
-        //left arrow --> left child
-        //right arrow --> right child
-        //up arrow --> parent
-        int selectionvar = 0;
-        Scanner keyboard = new Scanner(System.in);
-        System.out.println("Debug statement: Searching for arrow inputs");
-        // while(1) {
-        //   char input = System.console().readLine();
-        //   if() //input is up {
-        //     selectionvar = parent(selectionvar);
-        //   }
-        //   else if() { //input is right
-        //     selectionvar = rightChild(selectionvar)
-        //   }
-        //   else if () { //input is left
-        //     selectionvar = leftChild(selectionvar)
-        //   }
-        //   else if () { //selected
-        //     alpha = selectionvar;
-        //   }
-        //
-        // }
-        maxHeap.print();
+          int[] unsolved = new int[7];
+          //Generates 7 Random Numbers in the range 1 -20
+          for(int i = 0; i < unsolved.length; i++) {
+            unsolved[i] = (int)(Math.random()*100 + 1);
+          }
+          //preserve unsolved and work with unsolved
+          System.out.println("Generating solved maxheap ");
+          MaxHeap solved = new MaxHeap(7);
+          for(i = 0; i < unsolved.length; i++){
+            solved.insert(unsolved[i]);
+          }
 
 
+          while(1){
+            if (Arrays.equals(Heap, unsolved)){
+                break;
+            }
+            //scanning for user method inputs
+            //desperation section: we run the entire thing in a single java file because fuck javascript, fuck html, and fuck this, nobody knows this shit
+            //the ghetto method
+            Scanner alpha_input = new Scanner(System.in);
+            System.out.println("Enter index of node to swap");
+            Int alpha = alpha_input.nextLine();
+            Scanner beta_input = new Scanner(System.in);
+            System.out.println("Enter swap target (0 for parent, 1 for left child, 2 for right child)");
+            Int beta = beta_input.nextLine();
+            if(beta == 0){
+              Collections.swap(unsolved, alpha, parent(alpha));
+              userswapcount += 1;
+            }
+            else if(beta == 1){
+              Collections.swap(unsolved, alpha, leftChild(alpha));
+              userswapcount += 1;
+            }
+            else if(beta == 2){
+              Collections.swap(unsolved, alpha, rightChild(alpha));
+              userswapcount += 1;
+            }
+
+          }
+          maxHeap.print();
+        }
+
+        else if (difficulty == 1){
+          int[] unsolved = new int[15];
+          //Generates 7 Random Numbers in the range 1 -20
+          for(int i = 0; i < unsolved.length; i++) {
+          unsolved[i] = (int)(Math.random()*100 + 1);
+          }
+          //preserve unsolved and work with unsolved
+          System.out.println("Generating solved maxheap ");
+          MaxHeap solved = new MaxHeap(15);
+          for(i = 0; i < unsolved.length; i++){
+            solved.insert(unsolved[i]);
+          }
+
+          while(1){
+            if (Arrays.equals(Heap, unsolved)){
+              break;
+            }
+            //scanning for user method inputs
+          }
+          maxHeap.print();
+
+        }
+
+        else if (difficulty == 2){
+          int[] unsolved = new int[31];
+          //Generates 7 Random Numbers in the range 1 -20
+          for(int i = 0; i < unsolved.length; i++) {
+          unsolved[i] = (int)(Math.random()*100 + 1);
+          }
+          //preserve unsolved and work with unsolved
+          System.out.println("Generating solved maxheap ");
+          MaxHeap solved = new MaxHeap(31);
+          for(i = 0; i < unsolved.length; i++){
+            solved.insert(unsolved[i]);
+          }
+
+          while(1){
+            if (Arrays.equals(Heap, unsolved)){
+              break;
+            }
+            //scanning for user method inputs
+          }
+          maxHeap.print();
+
+        }
     }
 }
