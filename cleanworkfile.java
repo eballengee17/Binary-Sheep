@@ -35,7 +35,7 @@ public class cleanworkfile implements Serializable {
     private int rightChild(int pos)
     {
         return (2 * pos) + 1;
-    }
+
 
     // Returns true of given node is leaf
     private boolean isLeaf(int pos)
@@ -126,26 +126,32 @@ public class cleanworkfile implements Serializable {
           for(i = 0; i < unsolved.length; i++){
             solved.insert(unsolved[i]);
           }
-          try
-          {
-            //Saving of object in a file
-            ObjectOutputStream out = new ObjectOutputStream(file);
 
-            // Method for serialization of object
-            out.writeObject(unsolved);
-
-            out.flush();
-            out.close();
-
-            System.out.println("Object has been serialized");
-
-          }
 
           while(1){
             if (Arrays.equals(Heap, unsolved)){
               break;
             }
+            Gson gson = new Gson();
+            String userJson = gson.toJson(unsolved);
             //scanning for user method inputs
+            //desperation section: we run the entire thing in a single java file because fuck javascript, fuck html, and fuck this, nobody knows this shit
+            //the ghetto method
+            Scanner alpha_input = new Scanner(System.in);
+            System.out.println("Enter index of node to swap");
+            Int alpha = alpha_input.nextLine();
+            Scanner beta_input = new Scanner(System.in);
+            System.out.println("Enter swap target (0 for parent, 1 for left child, 2 for right child)");
+            Int beta = beta_input.nextLine();
+            if(beta == 0){
+              swap(alpha, parent(alpha));
+            }
+            else if(beta == 1){
+              swap(alpha, leftChild(alpha));
+            }
+            else if(beta == 2){
+              swap(alpha, rightChild(alpha));
+            }
           }
           maxHeap.print();
         }
