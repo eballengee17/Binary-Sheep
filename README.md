@@ -6,3 +6,6 @@ maxheap.java - hnggggggggggggggggg
 
 to do: add swap counters, add computation of ideal solution
 javascript structure
+
+https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Drawing_graphics
+
