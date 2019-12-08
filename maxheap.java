@@ -225,7 +225,7 @@ public class MaxHeap {
     private int[] Heap;
     private int size;
     private int maxsize;
-    private int swapcallcount = 0;
+    private static int swapcallcount = 0;
 
 
     // Constructor to initialize an
@@ -329,20 +329,11 @@ public class MaxHeap {
         return popped;
     }
 
+
     public static void main(String[] arg)
     {
-      int userswapmax;
-      Scanner diffinput = new Scanner(System.in);
-      int difficulty = diffinput.nextInt();
-      if (difficulty == 0){
-        userswapmax = 10;
-      }
-      else if(difficulty == 1){
-        userswapmax = 5;
-      }
-      else if(difficulty == 2){
-        userswapmax = 1;
-      }
+      int userswapmax = 0;
+
       int[] randint = new int[15];
       int arrlen = randint.length;
       //Generates 15 Random Numbers in the range 1 -100
@@ -357,5 +348,31 @@ public class MaxHeap {
 
         maxHeap.print();
         System.out.println("The max val is " + maxHeap.extractMax());
+        System.out.println("Randomized array, shouldn't make sense");
+        for (int i = 0; i < arrlen; i++) {
+            System.out.print(randint[i]);
+            System.out.println();
+        }
+        Scanner diffinput = new Scanner(System.in);
+        System.out.println("Difficulty setting inputs, 0 for 10, 1 for 5, 2 for 1");
+        int difficulty = diffinput.nextInt();
+        if (difficulty == 0){
+          userswapmax = 10 + swapcallcount;
+        }
+        else if(difficulty == 1){
+          userswapmax = 5 + swapcallcount;
+        }
+        else if(difficulty == 2){
+          userswapmax = 1+swapcallcount;
+        }
+        System.out.println("Max Actions Permitted: " + userswapmax);
+        // while(true){
+        //   //game loop basically
+        //   //scan for selection input
+        //   //placeholder alpha
+        //   //placeholder beta
+        //   Collections.swap(randint, alpha, beta);
+        //
+        // }
     }
 }
