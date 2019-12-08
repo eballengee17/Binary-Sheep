@@ -164,33 +164,35 @@ public class MaxHeap {
         System.out.println("Debug - The Max Heap is ");
 
         maxHeap.print();
-
         System.out.println();
         System.out.println("Debug - Ideal Swap Count is: " + swapcallcount);
         System.out.println("Randomized array, shouldn't make sense");
 
+        double wpc;
+        wpc = 15.0 - Math.ceil(Math.log(15.0));
+        System.out.println("Debug - Worst Possible Case: " + wpc);
+        int delta;
+        delta = (int)wpc;
 
         //Needs to be replaced by game input menu selection
         Scanner diffinput = new Scanner(System.in);
         System.out.println("Difficulty setting inputs, 0 for 10, 1 for 5, 2 for 1");
         int difficulty = diffinput.nextInt();
         if (difficulty == 0){
-          userswapmax = 10 + swapcallcount;
+          userswapmax = 10 + delta;
         }
         else if(difficulty == 1){
-          userswapmax = 5 + swapcallcount;
+          userswapmax = 5 + delta;
         }
         else if(difficulty == 2){
-          userswapmax = 1+swapcallcount;
+          userswapmax = 1 + delta;
         }
         System.out.println("Debug - Max Actions Permitted (not currently active): " + userswapmax);
-        double wpc;
-        wpc = 15.0 - Math.ceil(Math.log(15.0));
-        System.out.println("Debug - Worst Possible Case: " + wpc);
+
 
         while(true){
            //align with game loop
-           //scan for selection input, pass to alpha and beta respectively
+           //scan for selection input, pass to alpha1
            ghettoprint(randint);
            Scanner alpha = new Scanner(System.in);
            System.out.println("Enter swap index alpha (or type 40 to debug exit)");
@@ -200,7 +202,7 @@ public class MaxHeap {
              return;
            }
 
-           //in game replace by swap target sheep
+           //in game replace by swap target sheep, pass to beta1
            Scanner beta = new Scanner(System.in);
            System.out.println("Enter swap index beta");
            int beta1 = beta.nextInt();
