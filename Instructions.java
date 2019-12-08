@@ -31,7 +31,7 @@ public class Instructions extends MouseAdapter{
     int my = e.getY();
 
     //return button
-    if(mouseOver(mx, my, 403,550,475,115)){
+    if(game.gameState == STATE.Instructions && mouseOver(mx, my, 403,550,475,115)){
       game.gameState = STATE.Menu;
     }
   }

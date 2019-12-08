@@ -31,9 +31,34 @@ public class Menu extends MouseAdapter{
     int my = e.getY();
 
     //if mouse is over play button
-    if(mouseOver(mx, my, 460, 240, 360, 105)){
+    if(game.gameState == STATE.Menu && mouseOver(mx, my, 460, 240, 360, 105)){
       game.gameState = STATE.Game;
-    }else if(mouseOver(mx, my, 460, 350, 360, 105)){
+
+      //add 15 Sheep
+      //layer 1
+      handler.addObject(new Sheep(600, 50, ID.Sheep));
+
+      //layer 2
+      handler.addObject(new Sheep(300, 200, ID.Sheep));
+      handler.addObject(new Sheep(900, 200, ID.Sheep));
+
+      //layer 3
+      handler.addObject(new Sheep(150,350, ID.Sheep));
+      handler.addObject(new Sheep(450,350, ID.Sheep));
+      handler.addObject(new Sheep(750,350, ID.Sheep));
+      handler.addObject(new Sheep(1050,350, ID.Sheep));
+
+      //layer 4
+      handler.addObject(new Sheep(75,500, ID.Sheep));
+      handler.addObject(new Sheep(225,500, ID.Sheep));
+      handler.addObject(new Sheep(375,500, ID.Sheep));
+      handler.addObject(new Sheep(525,500, ID.Sheep));
+      handler.addObject(new Sheep(675,500, ID.Sheep));
+      handler.addObject(new Sheep(825,500, ID.Sheep));
+      handler.addObject(new Sheep(985,500, ID.Sheep));
+      handler.addObject(new Sheep(1135,500, ID.Sheep));
+
+    }else if(game.gameState == STATE.Menu && mouseOver(mx, my, 460, 350, 360, 105)){
       game.gameState = STATE.Instructions;
     }
   }

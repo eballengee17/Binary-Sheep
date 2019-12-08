@@ -7,7 +7,11 @@ maxheap.java - hnggggggggggggggggg
 to do: add swap counters, add computation of ideal solution
 javascript structure
 
-
+===================================================
+YOUTUBE VIDEOS FOR JAVA GAME:
+(watched parts 1-4, and another one to create the Game states/menus [part 10???])
+https://www.youtube.com/watch?v=5ufOPX8N1Rg&t=6s
+===================================================
 canvas stuff:
 https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Drawing_graphics
 
@@ -30,6 +34,3 @@ serialization and deserialization
 3: https://www.geeksforgeeks.org/deserializing-a-json-into-a-javascript-object/
 
 4: https://futurestud.io/tutorials/gson-getting-started-with-java-json-serialization-deserialization GSON  GYPSY MAGIC
-
-
-

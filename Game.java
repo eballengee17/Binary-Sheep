@@ -41,8 +41,6 @@ public class Game extends Canvas implements Runnable{
     if(gameState == STATE.Game){
       //need to add 15 sheep to make a tree
       handler.addObject(new Sheep(100,100, ID.Sheep));
-      handler.addObject(new Sheep(200,100, ID.Sheep));
-      handler.addObject(new Sheep(400,100, ID.Sheep));
     }
 
   }
@@ -114,7 +112,6 @@ public class Game extends Canvas implements Runnable{
     g.fillRect(0,0,WIDTH,HEIGHT);
 
 
-    handler.render(g);
 
     try{
       gameScreen = ImageIO.read(getClass().getResourceAsStream("/Images/field.png"));
@@ -133,6 +130,8 @@ public class Game extends Canvas implements Runnable{
       instructions.render(g);
     }
 
+    //render all game objects after canvas is rendered
+    handler.render(g);
     g.dispose();
     bs.show();
   }
