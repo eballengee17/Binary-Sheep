@@ -316,8 +316,6 @@ public class MaxHeap {
             System.out.print(Heap[i]);
             System.out.println();
         }
-        System.out.println();
-        System.out.println("Ideal Swap Count is: " + swapcallcount);
     }
 
     // Remove an element from max heap
@@ -332,7 +330,11 @@ public class MaxHeap {
 
     public static void main(String[] arg)
     {
-      int userswapmax = 0;
+      int userswapmax;
+      userswapmax = 0;
+
+      int useractions;
+      useractions = 0;
 
       int[] randint = new int[15];
       int arrlen = randint.length;
@@ -347,12 +349,15 @@ public class MaxHeap {
         System.out.println("The Max Heap is ");
 
         maxHeap.print();
-        System.out.println("The max val is " + maxHeap.extractMax());
+        System.out.println();
+        System.out.println("Ideal Swap Count is: " + swapcallcount);
         System.out.println("Randomized array, shouldn't make sense");
         for (int i = 0; i < arrlen; i++) {
             System.out.print(randint[i]);
             System.out.println();
         }
+
+        //Needs to be replaced by game input
         Scanner diffinput = new Scanner(System.in);
         System.out.println("Difficulty setting inputs, 0 for 10, 1 for 5, 2 for 1");
         int difficulty = diffinput.nextInt();
@@ -372,7 +377,8 @@ public class MaxHeap {
         //   //placeholder alpha
         //   //placeholder beta
         //   Collections.swap(randint, alpha, beta);
-        //
+        //   //augment useractions by 1
+        //   //if useractions exceceds userswapmax, you lose
         // }
     }
 }
