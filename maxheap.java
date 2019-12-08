@@ -189,8 +189,8 @@ public class MaxHeap {
         System.out.println("Debug - Worst Possible Case: " + wpc);
 
         while(true){
-        //   //game loop basically
-        //   //scan for selection input, pass to alpha and beta respectively
+           //align with game loop
+           //scan for selection input, pass to alpha and beta respectively
            ghettoprint(randint);
            Scanner alpha = new Scanner(System.in);
            System.out.println("Enter swap index alpha (or type 40 to debug exit)");
@@ -199,6 +199,8 @@ public class MaxHeap {
            if(alpha1 == 40){
              return;
            }
+
+           //in game replace by swap target sheep
            Scanner beta = new Scanner(System.in);
            System.out.println("Enter swap index beta");
            int beta1 = beta.nextInt();
