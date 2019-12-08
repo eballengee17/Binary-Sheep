@@ -220,6 +220,7 @@
 // }
 import java.util.Scanner;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class MaxHeap {
     private static int[] Heap;
@@ -327,27 +328,59 @@ public class MaxHeap {
         return popped;
     }
 
-    public static boolean wincheck(int[] correct, int[] user){
-      int x;
-      x = 1;
-      int y;
-      y = 0;
-      int validity;
-      validity = 0;
-      for (int i = 0; i < user.length; i++){
-        if(correct[x] != user[y]){
-          validity = 1;
+    // public static boolean wincheck(int[] correct, int[] user){
+    //   int x;
+    //   x = 1;
+    //   int y;
+    //   y = 0;
+    //   int validity;
+    //   validity = 0;
+    //   for (int i = 0; i < user.length; i++){
+    //     if(correct[x] != user[y]){
+    //       validity = 1;
+    //     }
+    //     ++x;
+    //     ++y;
+    //   }
+    //   if(validity == 0){
+    //     System.out.println("Array full match");
+    //     return true;
+    //   }
+    //   else {
+    //     System.out.println("Array incomplete");
+    //     return false;
+    //   }
+    // }
+
+    public static void array_swap(int[] arr, int index1, int index2){
+      int temp = arr[index1];
+      arr[index1] = arr[index2];
+      arr[index2] = temp;
+    }
+
+    //heap verification for winner
+    static boolean isHeap(int arr[], int i, int n) {
+      // If a leaf node
+        System.out.println("Debug Line: checking for heap status");
+        if (i > (n - 2) / 2) {
+            return true;
         }
-        ++x;
-        ++y;
-      }
-      if(validity == 0){
-        System.out.println("Array full match");
-        return true;
-      }
-      else {
-        System.out.println("Array incomplete");
+
+    // If an internal node and is greater than its children, and
+    // same is recursively true for the children
+        if (arr[i] >= arr[2 * i + 1] && arr[i] >= arr[2 * i + 2]
+                && isHeap(arr, 2 * i + 1, n) && isHeap(arr, 2 * i + 2, n)) {
+            return true;
+        }
+
         return false;
+    }
+    public static void ghettoprint(int[] randint){
+      System.out.println("Debug - Ghetto Print ");
+
+      for (int i = 0; i < randint.length; i++) {
+        System.out.print(randint[i]);
+        System.out.println();
       }
     }
 
@@ -370,17 +403,18 @@ public class MaxHeap {
       for(int i = 0; i < arrlen; i++) {
         maxHeap.insert(randint[i]);
       }
-        System.out.println("The Max Heap is ");
+        System.out.println("Debug - The Max Heap is ");
 
         maxHeap.print();
 
         System.out.println();
-        System.out.println("Ideal Swap Count is: " + swapcallcount);
+        System.out.println("Debug - Ideal Swap Count is: " + swapcallcount);
         System.out.println("Randomized array, shouldn't make sense");
-        for (int i = 0; i < arrlen; i++) {
-            System.out.print(randint[i]);
-            System.out.println();
-        }
+        // for (int i = 0; i < arrlen; i++) {
+        //     System.out.print(randint[i]);
+        //     System.out.println();
+        // }
+        ghettoprint(randint);
 
         //Needs to be replaced by game input
         Scanner diffinput = new Scanner(System.in);
@@ -395,19 +429,29 @@ public class MaxHeap {
         else if(difficulty == 2){
           userswapmax = 1+swapcallcount;
         }
-        System.out.println("Max Actions Permitted: " + userswapmax);
-        // while(true){
+        System.out.println("Debug - Max Actions Permitted (not currently active): " + userswapmax);
+        while(true){
         //   //game loop basically
         //   //scan for selection input, pass to alpha and beta respectively
-        //   //placeholder alpha
-        //   //placeholder beta
-        //   Collections.swap(randint, alpha, beta);
+           Scanner alpha = new Scanner(System.in);
+           System.out.println("Enter swap index alpha");
+           int alpha1 = alpha.nextInt();
+
+           Scanner beta = new Scanner(System.in);
+           System.out.println("Enter swap index beta");
+           int beta1 = beta.nextInt();
+           array_swap(randint, alpha1, beta1);
+           // for (int i = 0; i < arrlen; i++) {
+           //     System.out.print(randint[i]);
+           //     System.out.println();
+           // }
+           ghettoprint(randint);
         //   ++useractions;
-        if (wincheck(Heap, randint) == true){
-          System.out.println("A winrar is you!");
-          return;
-        }
+          if (isHeap(randint, 0, randint.length-1)){
+            System.out.println("A winrar is you!");
+            return;
+          }
         //   //if useractions exceceds userswapmax, you lose
-        // }
+        }
     }
 }
