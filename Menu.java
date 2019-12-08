@@ -11,17 +11,39 @@ import javax.imageio.ImageIO;
 import java.io.IOException;
 import java.awt.Image;
 
+
 public class Menu extends MouseAdapter{
 
   private Image menuScreen;
+  private Game game;
+  private Handler handler;
 
+  public Menu(Game game, Handler handler){
+    this.game = game;
+    this.handler = handler;
+  }
 
   public void mousePressed(MouseEvent e){
+    int mx = e.getX();
+    int my = e.getY();
 
+    //if mouse is over play button
+    if(mouseOver(mx, my, 460, 240, 105, 360)){
+      game.gameState = STATE.Game;
+    }
   }
 
   public void mouseReleased(MouseEvent e){
 
+  }
+
+  //checks if mouse is hovering over a button
+  private boolean mouseOver(int mx, int my, int x, int y, int width, int height){
+    if(mx > x && mx < x + width){
+      if(my > y && my < y + height){
+        return true;
+      }else return false;
+    }else return false;
   }
 
   public void tick(){
