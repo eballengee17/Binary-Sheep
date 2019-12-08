@@ -10,6 +10,7 @@ import javax.imageio.ImageIO;
 import java.io.IOException;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.lang.Math;
 
 public class Game extends Canvas implements Runnable{
 
@@ -24,13 +25,43 @@ public class Game extends Canvas implements Runnable{
   private Menu menu;
   private Instructions instructions;
 
+  //heap verification for winner (array, 0 , array length - 1)
+  static boolean isHeap(int arr[], int i, int n) {
+    // If a leaf node
+      System.out.println("Debug Line: checking for heap status");
+      if (i > (n - 2) / 2) {
+          return true;
+      }
 
+  // If an internal node and is greater than its children, and
+  // same is recursively true for the children
+      if (arr[i] >= arr[2 * i + 1] && arr[i] >= arr[2 * i + 2]
+              && isHeap(arr, 2 * i + 1, n) && isHeap(arr, 2 * i + 2, n)) {
+          return true;
+      }
+
+      return false;
+  }
+
+//Array created
+//===========================================================
+  // public int[] createHeap(){
+  //   int[] sheepHeap = new int[15];
+  //   int arrlen = sheepHeap.length;
+  //   //Generates 15 Random Numbers in the range 1 -100
+  //   for(int i = 0; i < arrlen; i++) {
+  //     sheepHeap[i] = (int)(Math.random()*100 + 1);
+  //   }
+  //   return sheepHeap;
+  // }
+//===========================================================
   //initialize game state at menuscreen
   public STATE gameState = STATE.Menu;
 
   public Game(){
     handler = new Handler();
     menu = new Menu(this, handler);
+
     instructions = new Instructions(this, handler);
     this.addMouseListener(menu);
     this.addMouseListener(instructions);
@@ -38,10 +69,9 @@ public class Game extends Canvas implements Runnable{
     new Window(WIDTH, HEIGHT, "Binary Sheep", this);
 
 
-    if(gameState == STATE.Game){
-      //need to add 15 sheep to make a tree
-      handler.addObject(new Sheep(100,100, ID.Sheep));
-    }
+    // if(gameState == STATE.Game){
+    //   //need to add 15 sheep to make a tree
+    // }
 
   }
 
@@ -135,6 +165,8 @@ public class Game extends Canvas implements Runnable{
     g.dispose();
     bs.show();
   }
+
+
 
   public static void main(String args[]){
     new Game();

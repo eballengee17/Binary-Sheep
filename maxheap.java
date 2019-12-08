@@ -116,7 +116,7 @@ public class MaxHeap {
       arr[index2] = temp;
     }
 
-    //heap verification for winner
+    //heap verification for winner (array, 0 , array length - 1)
     static boolean isHeap(int arr[], int i, int n) {
       // If a leaf node
         System.out.println("Debug Line: checking for heap status");

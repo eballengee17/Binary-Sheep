@@ -9,13 +9,17 @@ public abstract class GameObject{
 
   protected int x, y;
   protected ID id;
+  protected int index;
+  protected int value;
   protected int velX, velY;
 
   //game object constructor --> used for all game objects
-  public GameObject(int x, int y, ID id){
+  public GameObject(int x, int y, ID id, int index, int value){
     this.x = x;
     this.y = y;
     this.id = id;
+    this.index = index;
+    this.value = value;
   }
 
   public abstract void tick();
@@ -51,5 +55,16 @@ public abstract class GameObject{
   public ID getID(){
     return this.id;
   }
-
+  public int getIndex(){
+    return this.index;
+  }
+  public int getValue(){
+    return this.value;
+  }
+  public void setIndex(int index){
+    this.index = index;
+  }
+  public void setValue(int value){
+    this.value = value;
+  }
 }
