@@ -3,6 +3,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import javax.swing.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -30,10 +32,11 @@ public class Game extends Canvas implements Runnable{
 
   public Game(){
     handler = new Handler();
+    menu = new Menu(this, handler);
+    this.addMouseListener(menu);
 
     new Window(WIDTH, HEIGHT, "Binary Sheep", this);
 
-    menu = new Menu();
 
     if(gameState == STATE.Game){
       //need to add 15 sheep to make a tree
