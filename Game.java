@@ -3,6 +3,9 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import javax.swing.*;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
 
 public class Game extends Canvas implements Runnable{
 
@@ -12,18 +15,32 @@ public class Game extends Canvas implements Runnable{
 
   private Thread thread;
   private boolean running = false;
-
   private Handler handler;
+  private Menu menu;
 
+  public enum STATE{
+    Menu,
+    Instructions,
+    SetDifficulty,
+    Game
+  };
+
+  //initialize game state at menuscreen
+  public STATE gameState = STATE.Menu;
 
   public Game(){
     handler = new Handler();
-    
+
     new Window(WIDTH, HEIGHT, "Binary Sheep", this);
 
+    menu = new Menu();
 
-    //need to add 15 sheep to make a tree
-    handler.addObject(new Sheep(100,100, ID.Sheep));
+    if(gameState == STATE.Game){
+      //need to add 15 sheep to make a tree
+      handler.addObject(new Sheep(100,100, ID.Sheep));
+      handler.addObject(new Sheep(200,100, ID.Sheep));
+      handler.addObject(new Sheep(400,100, ID.Sheep));
+    }
 
   }
 
@@ -73,6 +90,12 @@ public class Game extends Canvas implements Runnable{
 
   private void tick(){
     handler.tick();
+
+    if(gameState == STATE.Game){
+      //tick game state
+    }else if(gameState == STATE.Menu){
+      menu.tick();
+    }
   }
 
   private void render(){
@@ -88,6 +111,12 @@ public class Game extends Canvas implements Runnable{
     g.fillRect(0,0,WIDTH,HEIGHT);
 
     handler.render(g);
+
+    if(gameState == STATE.Game){
+      //render game state
+    }else if(gameState == STATE.Menu){
+      menu.render(g);
+    }
 
     g.dispose();
     bs.show();
