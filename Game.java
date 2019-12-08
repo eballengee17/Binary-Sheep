@@ -6,6 +6,8 @@ import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.Image;
+import javax.imageio.ImageIO;
+import java.io.IOException;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
@@ -15,17 +17,13 @@ public class Game extends Canvas implements Runnable{
 
   public static final int WIDTH = 1280, HEIGHT = 720;
 
+  private Image gameScreen;
   private Thread thread;
   private boolean running = false;
   private Handler handler;
   private Menu menu;
+  private Instructions instructions;
 
-  public enum STATE{
-    Menu,
-    Instructions,
-    SetDifficulty,
-    Game
-  };
 
   //initialize game state at menuscreen
   public STATE gameState = STATE.Menu;
@@ -33,7 +31,9 @@ public class Game extends Canvas implements Runnable{
   public Game(){
     handler = new Handler();
     menu = new Menu(this, handler);
+    instructions = new Instructions(this, handler);
     this.addMouseListener(menu);
+    this.addMouseListener(instructions);
 
     new Window(WIDTH, HEIGHT, "Binary Sheep", this);
 
@@ -95,7 +95,7 @@ public class Game extends Canvas implements Runnable{
     handler.tick();
 
     if(gameState == STATE.Game){
-      //tick game state
+      //tick game
     }else if(gameState == STATE.Menu){
       menu.tick();
     }
@@ -110,15 +110,27 @@ public class Game extends Canvas implements Runnable{
 
     Graphics g = bs.getDrawGraphics();
 
-    g.setColor(Color.black);
+    g.setColor(Color.white);
     g.fillRect(0,0,WIDTH,HEIGHT);
 
+
     handler.render(g);
+
+    try{
+      gameScreen = ImageIO.read(getClass().getResourceAsStream("/Images/field.png"));
+    } catch(IOException ex){
+      ex.printStackTrace();
+    }
+    g.drawImage(gameScreen, 0, 0, WIDTH, HEIGHT, null);
+    // g.setColor(Color.white);
+    // g.drawRect(460,350,360,105);
 
     if(gameState == STATE.Game){
       //render game state
     }else if(gameState == STATE.Menu){
       menu.render(g);
+    }else if(gameState == STATE.Instructions){
+      instructions.render(g);
     }
 
     g.dispose();

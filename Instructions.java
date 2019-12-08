@@ -12,16 +12,16 @@ import java.io.IOException;
 import java.awt.Image;
 
 
-public class Menu extends MouseAdapter{
+public class Instructions extends MouseAdapter{
 
 
-  private Image menuScreen;
+  private Image instructionScreen;
   private Game game;
-  private Instructions instructions;
+  private Menu menu;
   private Handler handler;
   public static final int WIDTH = 1280, HEIGHT = 720;
 
-  public Menu(Game game, Handler handler){
+  public Instructions(Game game, Handler handler){
     this.game = game;
     this.handler = handler;
   }
@@ -30,11 +30,9 @@ public class Menu extends MouseAdapter{
     int mx = e.getX();
     int my = e.getY();
 
-    //if mouse is over play button
-    if(mouseOver(mx, my, 460, 240, 360, 105)){
-      game.gameState = STATE.Game;
-    }else if(mouseOver(mx, my, 460, 350, 360, 105)){
-      game.gameState = STATE.Instructions;
+    //return button
+    if(mouseOver(mx, my, 403,550,475,115)){
+      game.gameState = STATE.Menu;
     }
   }
 
@@ -57,12 +55,12 @@ public class Menu extends MouseAdapter{
 
   public void render(Graphics g){
     try{
-      menuScreen = ImageIO.read(getClass().getResourceAsStream("/Images/menuscreen.png"));
+      instructionScreen = ImageIO.read(getClass().getResourceAsStream("/Images/instructionscreen.png"));
     } catch(IOException ex){
       ex.printStackTrace();
     }
-    g.drawImage(menuScreen, 0, 0, null);
+    g.drawImage(instructionScreen, 0, 0, null);
     // g.setColor(Color.white);
-    // g.drawRect(460,350,360,105);
+    // g.drawRect(403,550,475,115);
   }
 }

@@ -9,8 +9,8 @@ public class Sheep extends GameObject{
   public Sheep(int x, int y, ID id){
     super(x, y, id);
 
-    velX = 1;
-    velY = 3;
+    // velX = 1;
+    // velY = 3;
   }
 
   public void tick(){
