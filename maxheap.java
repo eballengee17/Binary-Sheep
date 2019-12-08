@@ -3,7 +3,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.lang.Math;
 
-
 public class MaxHeap {
     private static int[] Heap;
     private int size;
@@ -211,10 +210,11 @@ public class MaxHeap {
            array_swap(randint, alpha1, beta1);
 
            //pass this one to the thing?
-           
+
            outputclone = randint.clone();
         //  ghettoprint(randint);
            useractions = useractions + 1;
+        //pass useractions to thing
            if(useractions > userswapmax){
              //lose condition
              System.out.println("You lose");
