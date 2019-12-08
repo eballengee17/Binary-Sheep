@@ -169,9 +169,8 @@ public class MaxHeap {
         System.out.println("Debug - Ideal Swap Count is: " + swapcallcount);
         System.out.println("Randomized array, shouldn't make sense");
 
-        ghettoprint(randint);
 
-        //Needs to be replaced by game input
+        //Needs to be replaced by game input menu selection
         Scanner diffinput = new Scanner(System.in);
         System.out.println("Difficulty setting inputs, 0 for 10, 1 for 5, 2 for 1");
         int difficulty = diffinput.nextInt();
@@ -192,6 +191,7 @@ public class MaxHeap {
         while(true){
         //   //game loop basically
         //   //scan for selection input, pass to alpha and beta respectively
+           ghettoprint(randint);
            Scanner alpha = new Scanner(System.in);
            System.out.println("Enter swap index alpha (or type 40 to debug exit)");
            int alpha1 = alpha.nextInt();
@@ -204,12 +204,17 @@ public class MaxHeap {
            int beta1 = beta.nextInt();
            array_swap(randint, alpha1, beta1);
 
-           ghettoprint(randint);
-        //   ++useractions;
-          if (isHeap(randint, 0, randint.length-1)){
-            System.out.println("A winrar is you!");
-            return;
-          }
+        //  ghettoprint(randint);
+           useractions = useractions + 1;
+           if(useractions > userswapmax){
+             //lose condition
+             System.out.println("You lose");
+             return;
+           }
+           if (isHeap(randint, 0, randint.length-1)){
+             System.out.println("A winrar is you!");
+             return;
+           }
         //   //if useractions exceceds userswapmax, you lose
         }
     }
