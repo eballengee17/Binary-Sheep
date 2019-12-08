@@ -5,7 +5,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 maxheap.java - hnggggggggggggggggg
 
 to do: add swap counters, add computation of ideal solution
-javascript structure
+javascript structure, also redo menu page (respell instructions and have a little more detail about what heaps are)
 
 ===================================================
 YOUTUBE VIDEOS FOR JAVA GAME:
