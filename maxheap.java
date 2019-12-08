@@ -219,6 +219,7 @@
 //     }
 // }
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class MaxHeap {
     private int[] Heap;
@@ -317,7 +318,6 @@ public class MaxHeap {
         }
         System.out.println();
         System.out.println("Ideal Swap Count is: " + swapcallcount);
-        System.out.println("Maybe this works?" + Heap);
     }
 
     // Remove an element from max heap
@@ -331,17 +331,29 @@ public class MaxHeap {
 
     public static void main(String[] arg)
     {
+      int userswapmax;
+      Scanner diffinput = new Scanner(System.in);
+      int difficulty = diffinput.nextInt();
+      if (difficulty == 0){
+        userswapmax = 10;
+      }
+      else if(difficulty == 1){
+        userswapmax = 5;
+      }
+      else if(difficulty == 2){
+        userswapmax = 1;
+      }
+      int[] randint = new int[15];
+      int arrlen = randint.length;
+      //Generates 15 Random Numbers in the range 1 -100
+      for(int i = 0; i < arrlen; i++) {
+        randint[i] = (int)(Math.random()*100 + 1);
+      }
+      MaxHeap maxHeap = new MaxHeap(15);
+      for(int i = 0; i < arrlen; i++) {
+        maxHeap.insert(randint[i]);
+      }
         System.out.println("The Max Heap is ");
-        MaxHeap maxHeap = new MaxHeap(15);
-        maxHeap.insert(5);
-        maxHeap.insert(3);
-        maxHeap.insert(17);
-        maxHeap.insert(10);
-        maxHeap.insert(84);
-        maxHeap.insert(19);
-        maxHeap.insert(6);
-        maxHeap.insert(22);
-        maxHeap.insert(9);
 
         maxHeap.print();
         System.out.println("The max val is " + maxHeap.extractMax());
