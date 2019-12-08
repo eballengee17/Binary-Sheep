@@ -222,7 +222,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 public class MaxHeap {
-    private int[] Heap;
+    private static int[] Heap;
     private int size;
     private int maxsize;
     private static int swapcallcount = 0;
@@ -327,6 +327,30 @@ public class MaxHeap {
         return popped;
     }
 
+    public static boolean wincheck(int[] correct, int[] user){
+      int x;
+      x = 1;
+      int y;
+      y = 0;
+      int validity;
+      validity = 0;
+      for (int i = 0; i < user.length; i++){
+        if(correct[x] != user[y]){
+          validity = 1;
+        }
+        ++x;
+        ++y;
+      }
+      if(validity == 0){
+        System.out.println("Array full match");
+        return true;
+      }
+      else {
+        System.out.println("Array incomplete");
+        return false;
+      }
+    }
+
 
     public static void main(String[] arg)
     {
@@ -349,6 +373,7 @@ public class MaxHeap {
         System.out.println("The Max Heap is ");
 
         maxHeap.print();
+
         System.out.println();
         System.out.println("Ideal Swap Count is: " + swapcallcount);
         System.out.println("Randomized array, shouldn't make sense");
@@ -373,11 +398,15 @@ public class MaxHeap {
         System.out.println("Max Actions Permitted: " + userswapmax);
         // while(true){
         //   //game loop basically
-        //   //scan for selection input
+        //   //scan for selection input, pass to alpha and beta respectively
         //   //placeholder alpha
         //   //placeholder beta
         //   Collections.swap(randint, alpha, beta);
-        //   //augment useractions by 1
+        //   ++useractions;
+        if (wincheck(Heap, randint) == true){
+          System.out.println("A winrar is you!");
+          return;
+        }
         //   //if useractions exceceds userswapmax, you lose
         // }
     }
