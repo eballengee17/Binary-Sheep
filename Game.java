@@ -55,7 +55,6 @@ public class Game extends Canvas implements Runnable{
 
     lose = new Lose(this, handler);
     this.addMouseListener(lose);
-    
     new Window(WIDTH, HEIGHT, "Binary Sheep", this);
 
 

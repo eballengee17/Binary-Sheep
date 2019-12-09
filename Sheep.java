@@ -35,8 +35,13 @@ public class Sheep extends GameObject{
       ex.printStackTrace();
     }
     g.drawImage(sheepie, x, y, 100,100, null);
-    g.setColor(Color.black);
+    g.setFont(new Font("Corbel", Font.PLAIN, 18));
+
+    g.setColor(Color.red);
+    g.drawString(Integer.toString(index), x + 48, y + 100);
+
     g.setFont(new Font("Corbel", Font.PLAIN, 24));
+    g.setColor(Color.black);
     if(value > 9){
       g.drawString(Integer.toString(value), x + 40 , y + 60);
     }else{
