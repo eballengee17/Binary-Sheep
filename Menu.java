@@ -1,10 +1,10 @@
+import java.awt.*;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import javax.swing.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import javax.imageio.ImageIO;
@@ -14,6 +14,7 @@ import java.awt.Image;
 
 public class Menu extends MouseAdapter{
 
+  private TextBox t;
   public int[] sheepHeap;
   private Image menuScreen;
   private Game game;
@@ -43,6 +44,8 @@ public class Menu extends MouseAdapter{
     if(game.gameState == STATE.Menu && mouseOver(mx, my, 460, 240, 360, 105)){
       game.gameState = STATE.Game;
 
+      TextBox t = new TextBox();
+      
       sheepHeap = createHeap();
       //add 15 Sheep
       //layer 1
