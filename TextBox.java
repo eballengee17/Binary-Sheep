@@ -31,60 +31,6 @@ public class TextBox extends JFrame{
     arr[index1] = arr[index2];
     arr[index2] = temp;
 
-    // handler.removeObject(sheep0);
-    // handler.removeObject(sheep1);
-    // handler.removeObject(sheep2);
-    // handler.removeObject(sheep3);
-    // handler.removeObject(sheep4);
-    // handler.removeObject(sheep5);
-    // handler.removeObject(sheep6);
-    // handler.removeObject(sheep7);
-    // handler.removeObject(sheep8);
-    // handler.removeObject(sheep9);
-    // handler.removeObject(sheep10);
-    // handler.removeObject(sheep11);
-    // handler.removeObject(sheep12);
-    // handler.removeObject(sheep13);
-    // handler.removeObject(sheep14);
-    //add 15 Sheep
-    //layer 1
-    // Sheep sheep0 = new Sheep(600, 50, ID.Sheep, 0, sheepHeap[0]);
-    // handler.addObject(sheep0);
-    //
-    // //layer 2
-    // Sheep sheep1 = new Sheep(300, 200, ID.Sheep, 1, sheepHeap[1]);
-    // Sheep sheep2 = new Sheep(900, 200, ID.Sheep, 2, sheepHeap[2]);
-    // handler.addObject(sheep1);
-    // handler.addObject(sheep2);
-    //
-    // //layer 3
-    // Sheep sheep3 = new Sheep(150,350, ID.Sheep, 3, sheepHeap[3]);
-    // Sheep sheep4 = new Sheep(450,350, ID.Sheep, 4, sheepHeap[4]);
-    // Sheep sheep5 = new Sheep(750,350, ID.Sheep, 5, sheepHeap[5]);
-    // Sheep sheep6 = new Sheep(1050,350, ID.Sheep, 6, sheepHeap[6]);
-    // handler.addObject(sheep3);
-    // handler.addObject(sheep4);
-    // handler.addObject(sheep5);
-    // handler.addObject(sheep6);
-    //
-    // //layer 4
-    // Sheep sheep7 = new Sheep(75,500, ID.Sheep, 7, sheepHeap[7]);
-    // Sheep sheep8 = new Sheep(225,500, ID.Sheep, 8, sheepHeap[8]);
-    // Sheep sheep9 = new Sheep(375,500, ID.Sheep, 9, sheepHeap[9]);
-    // Sheep sheep10 = new Sheep(525,500, ID.Sheep, 10, sheepHeap[10]);
-    // Sheep sheep11 = new Sheep(675,500, ID.Sheep, 11, sheepHeap[11]);
-    // Sheep sheep12 = new Sheep(825,500, ID.Sheep, 12, sheepHeap[12]);
-    // Sheep sheep13 = new Sheep(985,500, ID.Sheep, 13, sheepHeap[13]);
-    // Sheep sheep14 = new Sheep(1135,500, ID.Sheep, 14, sheepHeap[14]);
-    // handler.addObject(sheep7);
-    // handler.addObject(sheep8);
-    // handler.addObject(sheep9);
-    // handler.addObject(sheep10);
-    // handler.addObject(sheep11);
-    // handler.addObject(sheep12);
-    // handler.addObject(sheep13);
-    // handler.addObject(sheep14);
-
   }
   public static boolean isHeap(int arr[], int i, int n) {
     // If a leaf node
@@ -108,7 +54,8 @@ public class TextBox extends JFrame{
     setVisible(true);
     setSize(400,200);
     setDefaultCloseOperation(EXIT_ON_CLOSE);
-
+    File SheepBaa = new File("Sheep.wav");
+    File Nelson = new File("Nelson.wav");
 
     jp.add(jt1);
     jt1.addActionListener(new ActionListener(){
@@ -134,7 +81,9 @@ public class TextBox extends JFrame{
         // charlie = alpha + beta;
         // array_swap(sheepHeap, object.get(alpha).index, object.get(beta).index, Menu.handler);
         array_swap(sheepHeap, object.get(alpha).index, object.get(beta).index);
-        System.out.println("HELP");
+        System.out.println("alpha");
+        PlaySound(Nelson);
+
         if(isHeap(sheepHeap, 0, 14) == true){
           System.out.println("A winrar is you!");
           return;
@@ -167,17 +116,18 @@ public class TextBox extends JFrame{
         beta = Integer.parseInt(input2);
         charlie = alpha + beta;
 
-        System.out.println("Unsorted: \n");
+        System.out.println("Preswap: \n");
         for (int i=0; i<15; i++){
           System.out.print(sheepHeap[i] + " ");
         }
         array_swap(sheepHeap, object.get(alpha).index, object.get(beta).index);
-        System.out.println("help2");
+        System.out.println("Beta");
+        PlaySound(SheepBaa);
 
         swapcallcount += 1;
+        System.out.println();
         System.out.println(swapcallcount);
         if(swapcallcount > swapcallmax){
-          File Nelson = new File("Nelson.wav");
           PlaySound(Nelson);
           System.out.println("You Lose");
           return;
@@ -186,7 +136,7 @@ public class TextBox extends JFrame{
           System.out.println("A winrar is you!");
           return;
         }
-        System.out.println("Sorted: \n");
+        System.out.println("Postswap: \n");
         for (int i=0; i<15; i++){
           System.out.print(sheepHeap[i] + " ");
         }

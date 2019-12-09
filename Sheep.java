@@ -25,7 +25,7 @@ public class Sheep extends GameObject{
   public void tick(){
     // x += velX;
     // value += velX;
-    // value = sheepHeap[index];
+    value = value;
   }
 
   public void render(Graphics g){
