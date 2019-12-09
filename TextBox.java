@@ -1,6 +1,10 @@
 import javax.swing.*;
 import java.awt.event.*;
 import java.util.LinkedList;
+import java.io.File;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+
 
 public class TextBox extends JFrame{
 
@@ -137,12 +141,7 @@ public class TextBox extends JFrame{
         }
 
         swapcallcount += 1;
-        if(swapcallcount > swapcallmax){
-          // File Nelson = new File("Nelson.wav");
-          // PlaySound(Nelson);
-          System.out.println("Budget You lose Line");
-          return;
-        }
+
 
         //sheep0.setVelX(1);
 
@@ -173,6 +172,20 @@ public class TextBox extends JFrame{
           System.out.print(sheepHeap[i] + " ");
         }
         array_swap(sheepHeap, object.get(alpha).index, object.get(beta).index);
+        System.out.println("help2");
+
+        swapcallcount += 1;
+        System.out.println(swapcallcount);
+        if(swapcallcount > swapcallmax){
+          File Nelson = new File("Nelson.wav");
+          PlaySound(Nelson);
+          System.out.println("You Lose");
+          return;
+        }
+        if(isHeap(sheepHeap, 0, 14) == true){
+          System.out.println("A winrar is you!");
+          return;
+        }
         System.out.println("Sorted: \n");
         for (int i=0; i<15; i++){
           System.out.print(sheepHeap[i] + " ");
@@ -186,18 +199,18 @@ public class TextBox extends JFrame{
     add(jp);
 
 }
-// static void PlaySound(File Sound) {
-//   try {
-//     Clip clip = AudioSystem.getClip();
-//     clip.open(AudioSystem.getAudioInputStream(Sound));
-//     clip.start();
-//
-//     Thread.sleep(clip.getMicrosecondLength()/1000);
-//   }catch (Exception e)
-//   {
-//
-//   }
-// }
+static void PlaySound(File Sound) {
+  try {
+    Clip clip = AudioSystem.getClip();
+    clip.open(AudioSystem.getAudioInputStream(Sound));
+    clip.start();
+
+    Thread.sleep(clip.getMicrosecondLength()/1000);
+  }catch (Exception e)
+  {
+
+  }
+}
 public static void main(String[] args){
 }
 }

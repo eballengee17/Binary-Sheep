@@ -18,12 +18,14 @@ public class Sheep extends GameObject{
   public Sheep(int x, int y, ID id, int index, int value){
     super(x, y, id, index, value);
 
-    velX = 0;
+    velX = 1;
     velY = 0;
   }
 
   public void tick(){
-    value = sheepHeap[index];
+    // x += velX;
+    // value += velX;
+    // value = sheepHeap[index];
   }
 
   public void render(Graphics g){
