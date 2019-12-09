@@ -29,7 +29,7 @@ public class Game extends Canvas implements Runnable{
   private Instructions instructions;
 
   //heap verification for winner (array, 0 , array length - 1)
-  static boolean isHeap(int arr[], int i, int n) {
+  public static boolean isHeap(int arr[], int i, int n) {
     // If a leaf node
       System.out.println("Debug Line: checking for heap status");
       if (i > (n - 2) / 2) {
