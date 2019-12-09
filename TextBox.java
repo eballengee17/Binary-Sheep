@@ -15,6 +15,12 @@ public class TextBox extends JFrame{
   int alpha;
   int beta;
   int charlie;
+  int swapcallmax;
+  double wpc;
+  wpc = 15.0 - Math.ceil(Math.log(15.0));
+  swapcallmax = (int)wpc;
+  int swapcallcount;
+  swapcallcount = 0;
 
   public static void array_swap(int[] arr, int index1, int index2, Handler handler){
     int temp = arr[index1];
@@ -107,6 +113,13 @@ public class TextBox extends JFrame{
 
         // charlie = alpha + beta;
         array_swap(sheepHeap, object.get(alpha).index, object.get(beta).index, Menu.handler);
+        swapcallcount += 1;
+        if(swapcallcount > swapcallmax){
+          File Nelson = new File("Nelson.wav");
+          PlaySound(Nelson);
+          return;
+        }
+
         //sheep0.setVelX(1);
 
         // GameObject sheep1 = Handler.object.get(alpha);
@@ -148,6 +161,18 @@ public class TextBox extends JFrame{
     //jp.add(jl);
     add(jp);
 
+}
+static void PlaySound(File Sound) {
+  try {
+    Clip clip = AudioSystem.getClip();
+    clip.open(AudioSystem.getAudioInputStream(Sound));
+    clip.start();
+
+    Thread.sleep(clip.getMicrosecondLength()/1000);
+  }catch (Exception e)
+  {
+
+  }
 }
 public static void main(String[] args){
 }
