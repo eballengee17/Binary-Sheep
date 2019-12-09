@@ -213,46 +213,46 @@ public class MaxHeap {
              if(alpha1 == 0 && (beta1 == 1|| beta1 == 2)){
                omega = 1;
              }
-             else if(alpha1 == 1 && (beta1 == 0 || beta1 == 3 || beta1 == 4){
+             else if(alpha1 == 1 && (beta1 == 0 || beta1 == 3 || beta1 == 4)){
                omega = 1;
              }
-             else if(alpha1 == 2 && (beta1 == 0 || beta1 == 5 || beta1 == 6){
+             else if(alpha1 == 2 && (beta1 == 0 || beta1 == 5 || beta1 == 6)){
                omega = 1;
              }
-             else if(alpha1 == 3 && (beta1 == 1 || beta1 == 7 || beta1 == 8){
+             else if(alpha1 == 3 && (beta1 == 1 || beta1 == 7 || beta1 == 8)){
                omega = 1;
              }
-             else if(alpha1 == 4 && (beta1 == 1 || beta1 == 9 || beta1 == 10){
+             else if(alpha1 == 4 && (beta1 == 1 || beta1 == 9 || beta1 == 10)){
                omega = 1;
              }
-             else if(alpha1 == 5 && (beta1 == 2 || beta1 == 11 || beta1 == 12){
+             else if(alpha1 == 5 && (beta1 == 2 || beta1 == 11 || beta1 == 12)){
                omega = 1;
              }
-             else if(alpha1 == 6 && (beta1 == 2 || beta1 == 13 || beta1 == 14){
+             else if(alpha1 == 6 && (beta1 == 2 || beta1 == 13 || beta1 == 14)){
                omega = 1;
              }
-             else if(alpha1 == 7 && (beta1 == 3){
+             else if(alpha1 == 7 && (beta1 == 3)){
                omega = 1;
              }
-             else if(alpha1 == 8 && (beta1 == 3){
+             else if(alpha1 == 8 && (beta1 == 3)){
                omega = 1;
              }
-             else if(alpha1 == 9 && (beta1 == 4){
+             else if(alpha1 == 9 && (beta1 == 4)){
                omega = 1;
              }
-             else if(alpha1 == 10 && (beta1 == 4){
+             else if(alpha1 == 10 && (beta1 == 4)){
                omega = 1;
              }
-             else if(alpha1 == 11 && (beta1 == 5){
+             else if(alpha1 == 11 && (beta1 == 5)){
                omega = 1;
              }
-             else if(alpha1 == 12 && (beta1 == 5){
+             else if(alpha1 == 12 && (beta1 == 5)){
                omega = 1;
              }
-             else if(alpha1 == 13 && (beta1 == 6){
+             else if(alpha1 == 13 && (beta1 == 6)){
                omega = 1;
              }
-             else if(alpha1 == 14 && (beta1 == 6){
+             else if(alpha1 == 14 && (beta1 == 6)){
                omega = 1;
              }
              else {
