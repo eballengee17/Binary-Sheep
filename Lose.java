@@ -31,7 +31,7 @@ public class Lose extends MouseAdapter{
     int my = e.getY();
 
     //return button
-    if(game.gameState == STATE.Lose && mouseOver(mx, my, 403,550,475,115)){
+    if(game.gameState == STATE.Lose && mouseOver(mx, my, 375,550,475,115)){
       game.gameState = STATE.Menu;
     }
   }
@@ -60,5 +60,9 @@ public class Lose extends MouseAdapter{
     g.setFont(new Font("Corbel", Font.BOLD, 120));
     g.setColor(Color.white);
     g.drawString("YOU LOSE!", 330, 360);
+
+    g.setFont(new Font("Corbel", Font.PLAIN, 50));
+    g.drawRect(375,550,475,115);
+    g.drawString("Return", 550, 630);
   }
 }

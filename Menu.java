@@ -14,6 +14,7 @@ import java.awt.Image;
 
 public class Menu extends MouseAdapter{
 
+  private Win win;
   private Lose lose;
   public TextBox t;
   public static int[] sheepHeap;

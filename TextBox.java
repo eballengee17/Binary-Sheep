@@ -92,7 +92,7 @@ public class TextBox extends JFrame{
 
         if(isHeap(sheepHeap, 0, 14) == true){
           System.out.println("A winrar is you!");
-          return;
+          game.gameState = STATE.Win;
         }
 
         swapcallcount += 1;
@@ -147,7 +147,7 @@ public class TextBox extends JFrame{
         }
         if(isHeap(sheepHeap, 0, 14) == true){
           System.out.println("A winrar is you!");
-          return;
+          game.gameState = STATE.Win;
         }
         System.out.println("Postswap: \n");
         for (int i=0; i<15; i++){

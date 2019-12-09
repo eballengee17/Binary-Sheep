@@ -28,6 +28,7 @@ public class Game extends Canvas implements Runnable{
   private Menu menu;
   private Instructions instructions;
   private Lose lose;
+  private Win win;
   //heap verification for winner (array, 0 , array length - 1)
 
 //Array created
@@ -57,6 +58,8 @@ public class Game extends Canvas implements Runnable{
     this.addMouseListener(lose);
     new Window(WIDTH, HEIGHT, "Binary Sheep", this);
 
+    win = new Win(this, handler);
+    this.addMouseListener(lose);
 
     // if(gameState == STATE.Game){
     //   //need to add 15 sheep to make a tree
@@ -117,6 +120,8 @@ public class Game extends Canvas implements Runnable{
       menu.tick();
     }else if(gameState == STATE.Lose){
       lose.tick();
+    }else if(gameState == STATE.Win){
+      win.tick();
     }
   }
 
@@ -153,6 +158,8 @@ public class Game extends Canvas implements Runnable{
       instructions.render(g);
     }else if(gameState == STATE.Lose){
       lose.render(g);
+    }else if(gameState == STATE.Win){
+      win.render(g);
     }
 
     g.dispose();
