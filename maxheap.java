@@ -196,7 +196,7 @@ public class MaxHeap {
            //scan for selection input, pass to alpha1
            ghettoprint(randint);
            Scanner alpha = new Scanner(System.in);
-           System.out.println("Enter swap index alpha (or type 40 to debug exit)");
+           System.out.println("Enter starting swap index (DEBUG: or enter 40 to debug exit)");
            int alpha1 = alpha.nextInt();
            //debug exit so i don't have to keep restarting terminal
            if(alpha1 == 40){
@@ -204,9 +204,63 @@ public class MaxHeap {
            }
 
            //in game replace by swap target sheep, pass to beta1
-           Scanner beta = new Scanner(System.in);
-           System.out.println("Enter swap index beta");
-           int beta1 = beta.nextInt();
+           int omega;
+           omega = 0;
+           System.out.println("Enter swap target index: ");
+           while(omega == 0){
+             Scanner beta = new Scanner(System.in);
+             int beta1 = beta.nextInt();
+             if(alpha1 == 0 && (beta1 == 1|| beta1 == 2)){
+               omega = 1;
+             }
+             else if(alpha1 == 1 && (beta1 == 0 || beta1 == 3 || beta1 == 4){
+               omega = 1;
+             }
+             else if(alpha1 == 2 && (beta1 == 0 || beta1 == 5 || beta1 == 6){
+               omega = 1;
+             }
+             else if(alpha1 == 3 && (beta1 == 1 || beta1 == 7 || beta1 == 8){
+               omega = 1;
+             }
+             else if(alpha1 == 4 && (beta1 == 1 || beta1 == 9 || beta1 == 10){
+               omega = 1;
+             }
+             else if(alpha1 == 5 && (beta1 == 2 || beta1 == 11 || beta1 == 12){
+               omega = 1;
+             }
+             else if(alpha1 == 6 && (beta1 == 2 || beta1 == 13 || beta1 == 14){
+               omega = 1;
+             }
+             else if(alpha1 == 7 && (beta1 == 3){
+               omega = 1;
+             }
+             else if(alpha1 == 8 && (beta1 == 3){
+               omega = 1;
+             }
+             else if(alpha1 == 9 && (beta1 == 4){
+               omega = 1;
+             }
+             else if(alpha1 == 10 && (beta1 == 4){
+               omega = 1;
+             }
+             else if(alpha1 == 11 && (beta1 == 5){
+               omega = 1;
+             }
+             else if(alpha1 == 12 && (beta1 == 5){
+               omega = 1;
+             }
+             else if(alpha1 == 13 && (beta1 == 6){
+               omega = 1;
+             }
+             else if(alpha1 == 14 && (beta1 == 6){
+               omega = 1;
+             }
+             else {
+               System.out.println("Baaaaaa!  That doesn't seem right!  Try something else!");
+             }
+           }
+
+
            array_swap(randint, alpha1, beta1);
 
            //pass this one to the thing?
