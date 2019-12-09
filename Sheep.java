@@ -23,8 +23,7 @@ public class Sheep extends GameObject{
   }
 
   public void tick(){
-    x += velX;
-    y += velY;
+    value = value;
   }
 
   public void render(Graphics g){
