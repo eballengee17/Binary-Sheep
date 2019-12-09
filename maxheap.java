@@ -115,7 +115,7 @@ public class MaxHeap {
       arr[index2] = temp;
     }
 
-    //heap verification for winner (array, 0 , array length - 1)
+    //heap verification for winner
     static boolean isHeap(int arr[], int i, int n) {
       // If a leaf node
         System.out.println("Debug Line: checking for heap status");
@@ -206,7 +206,7 @@ public class MaxHeap {
            //in game replace by swap target sheep, pass to beta1
            int omega;
            omega = 0;
-           System.out.println("Enter swap target index: ");
+           System.out.println("Choose a neighboring sheep: ");
            while(omega == 0){
              Scanner beta = new Scanner(System.in);
              int beta1 = beta.nextInt();
