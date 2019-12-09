@@ -1,5 +1,4 @@
 import java.awt.Canvas;
-import java.util.LinkedList;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;

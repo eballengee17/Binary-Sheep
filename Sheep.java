@@ -23,8 +23,18 @@ public class Sheep extends GameObject{
   }
 
   public void tick(){
-    x += velX;
-    y += velY;
+    if(x<10){
+      x += velX;
+    }
+    else if(y<10){
+      y += velY;
+    }
+    else if(x>0){
+      x -= velX;
+    }
+    else if(y>0){
+      y -= velY;
+    }
   }
 
   public void render(Graphics g){
@@ -44,6 +54,5 @@ public class Sheep extends GameObject{
     // g.setColor(Color.white);
     // g.fillRect(x,y,32,32);
   }
-
 
 }
