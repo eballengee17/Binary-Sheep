@@ -15,73 +15,71 @@ public class TextBox extends JFrame{
   int alpha;
   int beta;
   int charlie;
-  // int swapcallmax;
-  // double wpc;
-  // wpc = 15.0 - Math.ceil(Math.log(15.0));
-  // swapcallmax = (int)wpc;
-  // int swapcallcount;
-  // swapcallcount = 0;
+  int swapcallmax;
+  double wpc;
+  wpc = 15.0 - Math.ceil(Math.log(15.0));
+  swapcallmax = (int)wpc;
+  int swapcallcount;
+  swapcallcount = 0;
 
-  // public static void array_swap(int[] arr, int index1, int index2, Handler handler){
-  public static void array_swap(int[] arr, int index1, int index2){
-
+  public static void array_swap(int[] arr, int index1, int index2, Handler handler){
     int temp = arr[index1];
     arr[index1] = arr[index2];
     arr[index2] = temp;
 
-    // handler.removeObject(sheep0);
-    // handler.removeObject(sheep1);
-    // handler.removeObject(sheep2);
-    // handler.removeObject(sheep3);
-    // handler.removeObject(sheep4);
-    // handler.removeObject(sheep5);
-    // handler.removeObject(sheep6);
-    // handler.removeObject(sheep7);
-    // handler.removeObject(sheep8);
-    // handler.removeObject(sheep9);
-    // handler.removeObject(sheep10);
-    // handler.removeObject(sheep11);
-    // handler.removeObject(sheep12);
-    // handler.removeObject(sheep13);
-    // handler.removeObject(sheep14);
+    handler.removeObject(sheep0);
+    handler.removeObject(sheep1);
+    handler.removeObject(sheep2);
+    handler.removeObject(sheep3);
+    handler.removeObject(sheep4);
+    handler.removeObject(sheep5);
+    handler.removeObject(sheep6);
+    handler.removeObject(sheep7);
+    handler.removeObject(sheep8);
+    handler.removeObject(sheep9);
+    handler.removeObject(sheep10);
+    handler.removeObject(sheep11);
+    handler.removeObject(sheep12);
+    handler.removeObject(sheep13);
+    handler.removeObject(sheep14);
     //add 15 Sheep
     //layer 1
-    // Sheep sheep0 = new Sheep(600, 50, ID.Sheep, 0, sheepHeap[0]);
-    // handler.addObject(sheep0);
-    //
-    // //layer 2
-    // Sheep sheep1 = new Sheep(300, 200, ID.Sheep, 1, sheepHeap[1]);
-    // Sheep sheep2 = new Sheep(900, 200, ID.Sheep, 2, sheepHeap[2]);
-    // handler.addObject(sheep1);
-    // handler.addObject(sheep2);
-    //
-    // //layer 3
-    // Sheep sheep3 = new Sheep(150,350, ID.Sheep, 3, sheepHeap[3]);
-    // Sheep sheep4 = new Sheep(450,350, ID.Sheep, 4, sheepHeap[4]);
-    // Sheep sheep5 = new Sheep(750,350, ID.Sheep, 5, sheepHeap[5]);
-    // Sheep sheep6 = new Sheep(1050,350, ID.Sheep, 6, sheepHeap[6]);
-    // handler.addObject(sheep3);
-    // handler.addObject(sheep4);
-    // handler.addObject(sheep5);
-    // handler.addObject(sheep6);
-    //
-    // //layer 4
-    // Sheep sheep7 = new Sheep(75,500, ID.Sheep, 7, sheepHeap[7]);
-    // Sheep sheep8 = new Sheep(225,500, ID.Sheep, 8, sheepHeap[8]);
-    // Sheep sheep9 = new Sheep(375,500, ID.Sheep, 9, sheepHeap[9]);
-    // Sheep sheep10 = new Sheep(525,500, ID.Sheep, 10, sheepHeap[10]);
-    // Sheep sheep11 = new Sheep(675,500, ID.Sheep, 11, sheepHeap[11]);
-    // Sheep sheep12 = new Sheep(825,500, ID.Sheep, 12, sheepHeap[12]);
-    // Sheep sheep13 = new Sheep(985,500, ID.Sheep, 13, sheepHeap[13]);
-    // Sheep sheep14 = new Sheep(1135,500, ID.Sheep, 14, sheepHeap[14]);
-    // handler.addObject(sheep7);
-    // handler.addObject(sheep8);
-    // handler.addObject(sheep9);
-    // handler.addObject(sheep10);
-    // handler.addObject(sheep11);
-    // handler.addObject(sheep12);
-    // handler.addObject(sheep13);
-    // handler.addObject(sheep14);
+    Sheep sheep0 = new Sheep(600, 50, ID.Sheep, 0, sheepHeap[0]);
+    handler.addObject(sheep0);
+
+    //layer 2
+    Sheep sheep1 = new Sheep(300, 200, ID.Sheep, 1, sheepHeap[1]);
+    Sheep sheep2 = new Sheep(900, 200, ID.Sheep, 2, sheepHeap[2]);
+    handler.addObject(sheep1);
+    handler.addObject(sheep2);
+
+    //layer 3
+    Sheep sheep3 = new Sheep(150,350, ID.Sheep, 3, sheepHeap[3]);
+    Sheep sheep4 = new Sheep(450,350, ID.Sheep, 4, sheepHeap[4]);
+    Sheep sheep5 = new Sheep(750,350, ID.Sheep, 5, sheepHeap[5]);
+    Sheep sheep6 = new Sheep(1050,350, ID.Sheep, 6, sheepHeap[6]);
+    handler.addObject(sheep3);
+    handler.addObject(sheep4);
+    handler.addObject(sheep5);
+    handler.addObject(sheep6);
+
+    //layer 4
+    Sheep sheep7 = new Sheep(75,500, ID.Sheep, 7, sheepHeap[7]);
+    Sheep sheep8 = new Sheep(225,500, ID.Sheep, 8, sheepHeap[8]);
+    Sheep sheep9 = new Sheep(375,500, ID.Sheep, 9, sheepHeap[9]);
+    Sheep sheep10 = new Sheep(525,500, ID.Sheep, 10, sheepHeap[10]);
+    Sheep sheep11 = new Sheep(675,500, ID.Sheep, 11, sheepHeap[11]);
+    Sheep sheep12 = new Sheep(825,500, ID.Sheep, 12, sheepHeap[12]);
+    Sheep sheep13 = new Sheep(985,500, ID.Sheep, 13, sheepHeap[13]);
+    Sheep sheep14 = new Sheep(1135,500, ID.Sheep, 14, sheepHeap[14]);
+    handler.addObject(sheep7);
+    handler.addObject(sheep8);
+    handler.addObject(sheep9);
+    handler.addObject(sheep10);
+    handler.addObject(sheep11);
+    handler.addObject(sheep12);
+    handler.addObject(sheep13);
+    handler.addObject(sheep14);
 
   }
 
@@ -114,15 +112,13 @@ public class TextBox extends JFrame{
         }
 
         // charlie = alpha + beta;
-        // array_swap(sheepHeap, object.get(alpha).index, object.get(beta).index, Menu.handler);
-        array_swap(sheepHeap, object.get(alpha).index, object.get(beta).index);
-
-        // swapcallcount += 1;
-        // if(swapcallcount > swapcallmax){
-        //   File Nelson = new File("Nelson.wav");
-        //   PlaySound(Nelson);
-        //   return;
-        // }
+        array_swap(sheepHeap, object.get(alpha).index, object.get(beta).index, Menu.handler);
+        swapcallcount += 1;
+        if(swapcallcount > swapcallmax){
+          File Nelson = new File("Nelson.wav");
+          PlaySound(Nelson);
+          return;
+        }
 
         //sheep0.setVelX(1);
 
@@ -166,18 +162,18 @@ public class TextBox extends JFrame{
     add(jp);
 
 }
-// static void PlaySound(File Sound) {
-//   try {
-//     Clip clip = AudioSystem.getClip();
-//     clip.open(AudioSystem.getAudioInputStream(Sound));
-//     clip.start();
-//
-//     Thread.sleep(clip.getMicrosecondLength()/1000);
-//   }catch (Exception e)
-//   {
-//
-//   }
-// }
+static void PlaySound(File Sound) {
+  try {
+    Clip clip = AudioSystem.getClip();
+    clip.open(AudioSystem.getAudioInputStream(Sound));
+    clip.start();
+
+    Thread.sleep(clip.getMicrosecondLength()/1000);
+  }catch (Exception e)
+  {
+
+  }
+}
 public static void main(String[] args){
 }
 }
