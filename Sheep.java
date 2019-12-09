@@ -23,7 +23,7 @@ public class Sheep extends GameObject{
   }
 
   public void tick(){
-    value = sheepHeap[index];
+    value = value;
   }
 
   public void render(Graphics g){

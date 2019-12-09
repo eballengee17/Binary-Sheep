@@ -116,7 +116,6 @@ public class TextBox extends JFrame{
         // charlie = alpha + beta;
         // array_swap(sheepHeap, object.get(alpha).index, object.get(beta).index, Menu.handler);
         array_swap(sheepHeap, object.get(alpha).index, object.get(beta).index);
-        game.isHeap(sheepHeap, 0, 14);
 
         // swapcallcount += 1;
         // if(swapcallcount > swapcallmax){
