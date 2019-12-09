@@ -82,7 +82,7 @@ public class TextBox extends JFrame{
         // array_swap(sheepHeap, object.get(alpha).index, object.get(beta).index, Menu.handler);
         array_swap(sheepHeap, object.get(alpha).index, object.get(beta).index);
         System.out.println("alpha");
-        PlaySound(Nelson);
+        PlaySound(SheepBaa);
 
         if(isHeap(sheepHeap, 0, 14) == true){
           System.out.println("A winrar is you!");
