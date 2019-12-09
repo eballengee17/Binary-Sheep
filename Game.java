@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.lang.Math;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 
 public class Game extends Canvas implements Runnable{
 
