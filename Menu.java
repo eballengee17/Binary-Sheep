@@ -92,8 +92,9 @@ public class Menu extends MouseAdapter{
       handler.addObject(sheep13);
       handler.addObject(sheep14);
 
-      TextBox t = new TextBox(sheepHeap, handler.object);
+      // TextBox t = new TextBox(sheepHeap, handler.object);
       // for(int i = 0; i<15;i++){
+      //
       //   System.out.print(sheepHeap[i] + " ");
       //}
     }else if(game.gameState == STATE.Menu && mouseOver(mx, my, 460, 350, 360, 105)){
