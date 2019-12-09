@@ -27,7 +27,7 @@ public class Game extends Canvas implements Runnable{
   private Handler handler;
   private Menu menu;
   private Instructions instructions;
-
+  private Lose lose;
   //heap verification for winner (array, 0 , array length - 1)
 
 //Array created
@@ -53,6 +53,9 @@ public class Game extends Canvas implements Runnable{
     this.addMouseListener(menu);
     this.addMouseListener(instructions);
 
+    lose = new Lose(this, handler);
+    this.addMouseListener(lose);
+    
     new Window(WIDTH, HEIGHT, "Binary Sheep", this);
 
 

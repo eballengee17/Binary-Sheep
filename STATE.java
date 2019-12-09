@@ -1,6 +1,6 @@
 public enum STATE{
   Menu,
   Instructions,
-  SetDifficulty,
+  Lose,
   Game
 };

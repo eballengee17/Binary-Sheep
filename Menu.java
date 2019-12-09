@@ -14,8 +14,9 @@ import java.awt.Image;
 
 public class Menu extends MouseAdapter{
 
+  private Lose lose;
   public TextBox t;
-  public int[] sheepHeap;
+  public static int[] sheepHeap;
   private Image menuScreen;
   private Game game;
   private Instructions instructions;
@@ -92,7 +93,7 @@ public class Menu extends MouseAdapter{
       handler.addObject(sheep13);
       handler.addObject(sheep14);
 
-      TextBox t = new TextBox(sheepHeap, handler.object);
+      TextBox t = new TextBox(sheepHeap, handler.object, game, handler);
       // for(int i = 0; i<15;i++){
       //   System.out.print(sheepHeap[i] + " ");
       //}

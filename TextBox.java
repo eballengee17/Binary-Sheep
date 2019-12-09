@@ -10,12 +10,13 @@ public class TextBox extends JFrame{
 
   private static final long serialVersionUID = 42l;
 
+  private Handler handler;
+  private Game game;
   JPanel jp = new JPanel();
   JLabel jl = new JLabel();
   JTextField jt1 = new JTextField(2);
   JTextField jt2 = new JTextField(2);
   JButton jb = new JButton("Enter");
-
   int alpha;
   int beta;
   int charlie;
@@ -32,6 +33,7 @@ public class TextBox extends JFrame{
     arr[index2] = temp;
 
   }
+
   public static boolean isHeap(int arr[], int i, int n) {
     // If a leaf node
       if (i > (n - 2) / 2) {
@@ -49,7 +51,11 @@ public class TextBox extends JFrame{
   }
 
 
-  public TextBox(int[] sheepHeap, LinkedList<GameObject> object){
+  public TextBox(int[] sheepHeap, LinkedList<GameObject> object, Game game, Handler handler){
+
+    this.game = game;
+    this.handler = handler;
+
     setTitle("Binary Sheep");
     setVisible(true);
     setSize(400,200);
@@ -128,9 +134,9 @@ public class TextBox extends JFrame{
         System.out.println();
         System.out.println(swapcallcount);
         if(swapcallcount > swapcallmax){
+          game.gameState = STATE.Lose;
           PlaySound(Nelson);
           System.out.println("You Lose");
-          return;
         }
         if(isHeap(sheepHeap, 0, 14) == true){
           System.out.println("A winrar is you!");
