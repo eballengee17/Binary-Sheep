@@ -15,12 +15,10 @@ public class TextBox extends JFrame{
   int alpha;
   int beta;
   int charlie;
-  // int swapcallmax;
-  // double wpc;
+  int swapcallmax = 12;
+  // double wpc = 0.0;
   // wpc = 15.0 - Math.ceil(Math.log(15.0));
-  // swapcallmax = (int)wpc;
-  // int swapcallcount;
-  // swapcallcount = 0;
+  int swapcallcount = 0;
 
   // public static void array_swap(int[] arr, int index1, int index2, Handler handler){
   public static void array_swap(int[] arr, int index1, int index2){
@@ -84,6 +82,22 @@ public class TextBox extends JFrame{
     // handler.addObject(sheep14);
 
   }
+  public static boolean isHeap(int arr[], int i, int n) {
+    // If a leaf node
+      if (i > (n - 2) / 2) {
+          return true;
+      }
+
+  // If an internal node and is greater than its children, and
+  // same is recursively true for the children
+      if (arr[i] >= arr[2 * i + 1] && arr[i] >= arr[2 * i + 2]
+              && isHeap(arr, 2 * i + 1, n) && isHeap(arr, 2 * i + 2, n)) {
+          return true;
+      }
+
+      return false;
+  }
+
 
   public TextBox(int[] sheepHeap, LinkedList<GameObject> object){
     setTitle("Binary Sheep");
@@ -116,14 +130,19 @@ public class TextBox extends JFrame{
         // charlie = alpha + beta;
         // array_swap(sheepHeap, object.get(alpha).index, object.get(beta).index, Menu.handler);
         array_swap(sheepHeap, object.get(alpha).index, object.get(beta).index);
-        game.isHeap(sheepHeap, 0, 14);
+        System.out.println("HELP");
+        if(isHeap(sheepHeap, 0, 14) == true){
+          System.out.println("A winrar is you!");
+          return;
+        }
 
-        // swapcallcount += 1;
-        // if(swapcallcount > swapcallmax){
-        //   File Nelson = new File("Nelson.wav");
-        //   PlaySound(Nelson);
-        //   return;
-        // }
+        swapcallcount += 1;
+        if(swapcallcount > swapcallmax){
+          // File Nelson = new File("Nelson.wav");
+          // PlaySound(Nelson);
+          System.out.println("Budget You lose Line");
+          return;
+        }
 
         //sheep0.setVelX(1);
 
