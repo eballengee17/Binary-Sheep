@@ -18,6 +18,7 @@ public class Game extends Canvas implements Runnable{
 
   public static final int WIDTH = 1280, HEIGHT = 720;
 
+
   private Image gameScreen;
   private Thread thread;
   private boolean running = false;

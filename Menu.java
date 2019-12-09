@@ -27,6 +27,12 @@ public class Menu extends MouseAdapter{
     this.handler = handler;
   }
 
+  public static void array_swap(int[] arr, int index1, int index2){
+    int temp = arr[index1];
+    arr[index1] = arr[index2];
+    arr[index2] = temp;
+  }
+
   public int[] createHeap(){
     int[] sheepHeap = new int[15];
     int arrlen = sheepHeap.length;
@@ -44,9 +50,10 @@ public class Menu extends MouseAdapter{
     if(game.gameState == STATE.Menu && mouseOver(mx, my, 460, 240, 360, 105)){
       game.gameState = STATE.Game;
 
-      TextBox t = new TextBox();
-      
+
       sheepHeap = createHeap();
+      TextBox t = new TextBox(sheepHeap);
+
       //add 15 Sheep
       //layer 1
       handler.addObject(new Sheep(600, 50, ID.Sheep, 0, sheepHeap[0]));
