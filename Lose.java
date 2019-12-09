@@ -10,7 +10,7 @@ import java.io.File;
 import javax.imageio.ImageIO;
 import java.io.IOException;
 import java.awt.Image;
-
+import java.awt.Font;
 
 public class Lose extends MouseAdapter{
 
@@ -55,7 +55,10 @@ public class Lose extends MouseAdapter{
 
   public void render(Graphics g){
 
-    g.setColor(Color.green);
-    g.drawRect(403,550,475,115);
+    g.setColor(Color.black);
+    g.fillRect(0,0,1280,720);
+    g.setFont(new Font("Corbel", Font.BOLD, 120));
+    g.setColor(Color.white);
+    g.drawString("YOU LOSE!", 330, 360);
   }
 }

@@ -96,6 +96,13 @@ public class TextBox extends JFrame{
         }
 
         swapcallcount += 1;
+        if(swapcallcount > swapcallmax){
+          System.out.println("You Lose");
+          game.gameState = STATE.Lose;
+          PlaySound(Nelson);
+        }
+        System.out.println();
+        System.out.println(swapcallcount);
 
 
         //sheep0.setVelX(1);
@@ -134,9 +141,9 @@ public class TextBox extends JFrame{
         System.out.println();
         System.out.println(swapcallcount);
         if(swapcallcount > swapcallmax){
+          System.out.println("You Lose");
           game.gameState = STATE.Lose;
           PlaySound(Nelson);
-          System.out.println("You Lose");
         }
         if(isHeap(sheepHeap, 0, 14) == true){
           System.out.println("A winrar is you!");

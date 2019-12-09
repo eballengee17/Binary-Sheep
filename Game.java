@@ -109,12 +109,14 @@ public class Game extends Canvas implements Runnable{
   }
 
   private void tick(){
-    handler.tick();
+
 
     if(gameState == STATE.Game){
-      //tick game
+      handler.tick();
     }else if(gameState == STATE.Menu){
       menu.tick();
+    }else if(gameState == STATE.Lose){
+      lose.tick();
     }
   }
 
@@ -143,14 +145,16 @@ public class Game extends Canvas implements Runnable{
 
     if(gameState == STATE.Game){
       //render game state
+      //render all game objects after canvas is rendered
+      handler.render(g);
     }else if(gameState == STATE.Menu){
       menu.render(g);
     }else if(gameState == STATE.Instructions){
       instructions.render(g);
+    }else if(gameState == STATE.Lose){
+      lose.render(g);
     }
 
-    //render all game objects after canvas is rendered
-    handler.render(g);
     g.dispose();
     bs.show();
   }
