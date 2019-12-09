@@ -14,12 +14,12 @@ import java.awt.Image;
 
 public class Menu extends MouseAdapter{
 
-  public TextBox t;
+  private TextBox t;
   public int[] sheepHeap;
   private Image menuScreen;
   private Game game;
   private Instructions instructions;
-  public Handler handler;
+  private Handler handler;
   public static final int WIDTH = 1280, HEIGHT = 720;
 
   public Menu(Game game, Handler handler){
