@@ -1,24 +1,9 @@
 # Algorithms-Project-CSCI3383
 
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Binary SheepTM: A Gamification Concept
+By Erin Ballengee, Andrew Lim, and Kamil Piskorz
+__________________________________________________________________________________________________________________________________________
 
-maxheap.java - hnggggggggggggggggg
+Instead of being the things you count to make yourself fall asleep, sheep are fun and dynamic creatures that help you learn about binary heaps!
 
-to do: add swap counters, add computation of ideal solution
-javascript structure, also redo menu page (respell instructions and have a little more detail about what heaps are)
-
-===================================================
-YOUTUBE VIDEOS FOR JAVA GAME:
-(watched parts 1-4, and another one to create the Game states/menus [part 10???])
-https://www.youtube.com/watch?v=5ufOPX8N1Rg&t=6s
-===================================================
-
-serialization and deserialization
-
-1: https://crunchify.com/how-to-serialize-deserialize-list-of-objects-in-java-java-serialization-example/ dubious quality tutorial?
-
-2: https://www.geeksforgeeks.org/serialization-in-java/
-
-3: https://www.geeksforgeeks.org/deserializing-a-json-into-a-javascript-object/
-
-4: https://futurestud.io/tutorials/gson-getting-started-with-java-json-serialization-deserialization GSON  GYPSY MAGIC
+Binary SheepTM is a game constructed entirely in Java that educates a user in the manner in which a maximum binary heap is assembled. The user hits play, and has to swap the numbered sheep within a certain number of moves to restore the maximum binary heap order, or they lose. So as not to strand the player, there is an instructions menu with details about what constitutes a maximum binary heap and explains gameplay. The interactive format of this game allows for many possible results, all of which are fun and educational.
