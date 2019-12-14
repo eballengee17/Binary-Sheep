@@ -1,6 +1,6 @@
-# Algorithms-Project-CSCI3383
+# Binary SheepTM: A Gamification Concept
 
-Binary SheepTM: A Gamification Concept
+2019 Final Project for Algorithms CSCI3383
 By Erin Ballengee, Andrew Lim, and Kamil Piskorz
 __________________________________________________________________________________________________________________________________________
 
